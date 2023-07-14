@@ -13,7 +13,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: cradio_left
-  - board: nice_nano_v2
-    shield: cradio_right
+  # - board: nice_nano_v2
+  #   shield: cradio_left
+  # - board: nice_nano_v2
+  #   shield: cradio_right
+  - board: adv360pro_left
+  - board: adv360pro_right

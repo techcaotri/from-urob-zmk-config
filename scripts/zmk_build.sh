@@ -158,6 +158,8 @@ then
 
 else
     echo "Build mode: local"
+    echo "HOST_CONFIG_DIR: $HOST_CONFIG_DIR"
+    echo "HOST_ZMK_DIR: $HOST_ZMK_DIR"
     SUFFIX="${ZEPHYR_VERSION}"
     CONFIG_DIR="$HOST_CONFIG_DIR/config"
     cd "$HOST_ZMK_DIR/app"
@@ -168,7 +170,12 @@ compile_board () {
     echo -en "\n$(tput setaf 2)Building $1... $(tput sgr0)"
     BUILD_DIR="${1}_$SUFFIX"
     LOGFILE="$LOG_DIR/zmk_build_$1.log"
-    $DOCKER_PREFIX west build -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
+
+    echo ""
+    echo "$(pwd)"
+    echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
+        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1"
+    $DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
         -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1
     if [[ $? -eq 0 ]]
     then
@@ -191,7 +198,9 @@ compile_board () {
     fi
 }
 
+echo 1
 cd "$HOST_ZMK_DIR/app"
+echo 2
 for board in $(echo $BOARDS | sed 's/,/ /g')
 do
     compile_board $board
