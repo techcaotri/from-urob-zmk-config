@@ -7,7 +7,8 @@ manifest:
   projects:
     - name: zmk
       remote: urob
-      revision: adv360-led
+      # revision: adv360-led
+      revision: main
       import: app/west.yml
   self:
     path: config
