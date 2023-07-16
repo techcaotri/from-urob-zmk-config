@@ -1,0 +1,197 @@
+layout: {qmk_keyboard: adv360}
+layers:
+  default:
+  - - {t: '=', s: +}
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - keypad
+    - mod
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - {t: '-', s: _}
+    - ↹
+    - Q
+    - W
+    - E
+    - R
+    - T
+  - ['', '', Y, U, I, O, P, \, ESC, A]
+  - - {t: S, h: ⌃}
+    - {t: D, h: ⎇}
+    - {t: F, h: LSHIFT}
+    - G
+    - ''
+    - ⌃
+    - ⎇
+    - ⌘
+    - ⌃
+    - ''
+  - - H
+    - {t: J, h: ⇧}
+    - {t: K, h: ⎇}
+    - {t: L, h: ⌃}
+    - {t: ;, s: ':'}
+    - ''''
+    - ⇧
+    - Z
+    - X
+    - C
+  - - V
+    - B
+    - HOME
+    - PG UP
+    - N
+    - M
+    - {t: ',', s: <}
+    - {t: ., s: '>'}
+    - /
+    - ⇧
+  - - fn
+    - {t: '`', s: '~'}
+    - CAPS
+    - ←
+    - →
+    - SPACE
+    - DEL
+    - END
+    - PG DN
+    - BACKSPACE
+  - - ENTER
+    - ↑
+    - ↓
+    - {t: '[', s: '{'}
+    - {t: ']', s: '}'}
+    - fn
+  keypad:
+  - - {t: '=', s: +}
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - {t: ▽, type: trans}
+    - mod
+    - '6'
+    - KP NUM
+  - - KP EQUAL
+    - KP DIVIDE
+    - KP MULTIPLY
+    - {t: '-', s: _}
+    - ↹
+    - Q
+    - W
+    - E
+    - R
+    - T
+  - ['', '', Y, KP 7, KP 8, KP 9, KP MINUS, \, ESC, A]
+  - [S, D, F, G, '', ⌃, ⎇, ⌘, ⌃, '']
+  - [H, KP 4, KP 5, KP 6, KP PLUS, '''', ⇧, Z, X, C]
+  - [V, B, HOME, PG UP, N, KP 1, KP 2, KP 3, KP ENTER, ⇧]
+  - - fn
+    - {t: '`', s: '~'}
+    - CAPS
+    - ←
+    - →
+    - BSPC
+    - DEL
+    - END
+    - PG DN
+    - ENTER
+  - - KP 0
+    - ↑
+    - ↓
+    - KP DOT
+    - {t: ']', s: '}'}
+    - fn
+  fn:
+  - [F1, F2, F3, F4, F5, F6, keypad, mod, F7, F8]
+  - - F9
+    - F10
+    - F11
+    - F12
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - ''
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  mod:
+  - - ''
+    - BT 0
+    - BT 1
+    - BT 2
+    - BT 3
+    - BT 4
+    - ''
+    - {type: held}
+    - ''
+    - ''
+  - ['', '', '', '', '', '', '', '', '', '']
+  - [bootloader, bootloader, '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', BT CLR, '', RGB MEFS CMD 5]
+  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '&bl BL_TOG']
+  - [RGB TOG, '&bl BL_INC', '&bl BL_DEC', '', '', '']

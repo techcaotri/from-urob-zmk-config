@@ -7,7 +7,7 @@
   ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
               ╰─────────╯ ╰─────────╯     */
 
-// use global-quick-tap-ms for combos (requires PR 1387)
+// use global-quick-tap-ms for combos (fdequires PR 1387)
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <100>;
 
@@ -67,4 +67,3 @@ ZMK_COMBO(under, &kp UNDER,     RM0 RB0,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(minus, &kp MINUS,     RM1 RB1,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(fslh,  &kp FSLH,      RM2 RB2,     DEF NAV NUM, COMBO_TERM_SLOW)
 ZMK_COMBO(pipe,  &kp PIPE,      RM3 RB3,     DEF NAV NUM, COMBO_TERM_SLOW)
-

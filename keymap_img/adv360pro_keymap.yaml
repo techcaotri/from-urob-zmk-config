@@ -1,0 +1,894 @@
+layout:
+  qmk_keyboard: adv360
+layers:
+  base:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - fn
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - Q
+    - W
+    - E
+    - R
+    - T
+  - - t: '&num_dance'
+      h: num
+    - nav
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - \
+    - ESC
+    - t: A
+      h: "\u21E7"
+  - - t: S
+      h: "\u2303"
+    - t: D
+      h: "\u2387"
+    - F
+    - G
+    - num
+    - SmartMouseLayer
+    - H
+    - J
+    - t: K
+      h: "\u2387"
+    - t: L
+      h: "\u2303"
+  - - t: ''''
+      h: "\u21E7"
+    - ''''
+    - "\u21E7"
+    - Z
+    - X
+    - C
+    - V
+    - B
+    - N
+    - M
+  - - t: ','
+      s: ;
+    - t: .
+      s: ':'
+    - t: '?'
+      s: '!'
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - SPACE
+    - DEL
+  - - HOME
+    - PG UP
+    - BKSP
+    - RET
+    - END
+    - PG DN
+  nav:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - fn
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - LS(TAB)
+    - Alt+Tab
+    - t: "\u25BD"
+      type: trans
+  - - t: '&num_dance'
+      h: num
+    - nav
+    - PG UP
+    - t: BSPC
+      h: LC(BSPC)
+    - t: "\u2191"
+      h: LC(HOME)
+    - t: DEL
+      h: LC(DEL)
+    - t: "\u25BD"
+      type: trans
+    - \
+    - ESC
+    - t: "\u2318"
+      h: sticky
+  - - t: "\u2387"
+      h: sticky
+    - t: "\u2303"
+      h: sticky
+    - t: "\u21E7"
+      h: sticky
+    - t: "\u25BD"
+      type: trans
+    - num
+    - SmartMouseLayer
+    - PG DN
+    - t: "\u2190"
+      h: HOME
+    - t: "\u2193"
+      h: LC(END)
+    - t: "\u2192"
+      h: END
+  - - RET
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - INS
+    - "\u21B9"
+  - - <
+    - '>'
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - CANCEL
+    - t: "\u25BD"
+      type: trans
+  - - HOME
+    - PG UP
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - END
+    - PG DN
+  fn:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - t: fn
+      type: held
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - F12
+    - F7
+    - F8
+    - F9
+    - t: "\u25BD"
+      type: trans
+  - - t: '&num_dance'
+      h: num
+    - nav
+    - t: "\u25BD"
+      type: trans
+    - PREV
+    - VOL UP
+    - NEXT
+    - WinSleep
+    - \
+    - ESC
+    - F11
+  - - F4
+    - F5
+    - F6
+    - t: "\u25BD"
+      type: trans
+    - num
+    - SmartMouseLayer
+    - t: "\u25BD"
+      type: trans
+    - t: LG(LC(LEFT))
+      h: "\u21E7"
+    - t: VOL DN
+      h: "\u2303"
+    - t: LG(LC(RIGHT))
+      h: "\u2387"
+  - - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - F10
+    - F1
+    - F2
+    - F3
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - HOME
+    - PG UP
+    - 'VOL
+
+      MUTE'
+    - PP
+    - END
+    - PG DN
+  num:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - fn
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - '7'
+    - '8'
+    - '9'
+    - t: "\u25BD"
+      type: trans
+  - - t: '&num_dance'
+      h: num
+      type: held
+    - nav
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - \
+    - ESC
+    - t: '0'
+      h: "\u2318"
+  - - t: '4'
+      h: "\u2387"
+    - t: '5'
+      h: "\u2303"
+    - t: '6'
+      h: "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - num
+    - SmartMouseLayer
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - '1'
+    - '2'
+    - '3'
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - HOME
+    - PG UP
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - END
+    - PG DN
+  sys:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - t: fn
+      type: held
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - BT 0
+    - BT 1
+    - BT 2
+    - BT 3
+    - BT CLR
+  - - t: '&num_dance'
+      h: num
+      type: held
+    - nav
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - \
+    - ESC
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - bootloader
+    - num
+    - SmartMouseLayer
+    - bootloader
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - HOME
+    - PG UP
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - END
+    - PG DN
+  mouse:
+  - - t: '='
+      s: +
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - fn
+    - fn
+    - '6'
+    - '7'
+  - - '8'
+    - '9'
+    - '0'
+    - t: '-'
+      s: _
+    - "\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: '&num_dance'
+      h: num
+    - nav
+    - t: "\u25BD"
+      type: trans
+    - MouseScrollDown
+    - MouseUp
+    - MouseScrollUp
+    - t: "\u25BD"
+      type: trans
+    - \
+    - ESC
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - num
+    - SmartMouseLayer
+    - MouseScrollLeft
+    - MouseLeft
+    - MouseDown
+    - MouseRight
+  - - MouseScrollRight
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - SmartMouseLayer
+    - t: '`'
+      s: '~'
+    - CAPS
+    - "\u2190"
+    - "\u2192"
+    - "\u2191"
+  - - "\u2193"
+    - MouseScrollDown
+    - MouseScrollUp
+    - ''
+    - "\u2303"
+    - "\u2387"
+    - "\u2318"
+    - "\u2303"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - HOME
+    - PG UP
+    - MouseClickRight
+    - MouseClickLeft
+    - END
+    - PG DN
+combos:
+- p:
+  - 16
+  - 17
+  k: ESC
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 17
+  - 18
+  k: "\u23CE"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 16
+  - 18
+  k: SmartMouseLayer
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 30
+  - 31
+  k:
+    t: "\u21B9"
+    h: LA(LCTRL)
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 31
+  - 32
+  k:
+    t: '&key_repeat'
+    h: LS(LCTRL)
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 44
+  - 46
+  k: LC(X)
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 44
+  - 45
+  k: LC(INS)
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 45
+  - 46
+  k: LS(INS)
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 23
+  - 24
+  k: BSPC
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 24
+  - 25
+  k: DEL
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 37
+  - 38
+  k:
+    t: (
+    h: RS(LCTRL)
+    s: <
+  l:
+  - base
+  - num
+- p:
+  - 38
+  - 39
+  k:
+    t: )
+    h: LA(LCTRL)
+    s: '>'
+  l:
+  - base
+  - num
+- p:
+  - 37
+  - 38
+  k: <
+  l:
+  - nav
+- p:
+  - 38
+  - 39
+  k: '>'
+  l:
+  - nav
+- p:
+  - 49
+  - 50
+  k: '['
+  l:
+  - base
+  - num
+- p:
+  - 50
+  - 51
+  k: ']'
+  l:
+  - base
+  - num
+- p:
+  - 49
+  - 50
+  k: '{'
+  l:
+  - nav
+- p:
+  - 50
+  - 51
+  k: '}'
+  l:
+  - nav
+- p:
+  - 16
+  - 30
+  k: '@'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 17
+  - 31
+  k: '#'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 18
+  - 32
+  k: $
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 19
+  - 33
+  k: '%'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 30
+  - 44
+  k: '`'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 31
+  - 45
+  k: \
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 32
+  - 46
+  k: '='
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 33
+  - 47
+  k: '~'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 22
+  - 36
+  k: ^
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 23
+  - 37
+  k: +
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 24
+  - 38
+  k: '*'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 25
+  - 39
+  k: '&'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 36
+  - 48
+  k: _
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 37
+  - 49
+  k: '-'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 38
+  - 50
+  k: /
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 39
+  - 51
+  k: '|'
+  l:
+  - base
+  - nav
+  - num
