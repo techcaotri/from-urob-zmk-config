@@ -44,8 +44,8 @@ layers:
     - C
   - - V
     - B
-    - HOME
-    - PG UP
+    - ⇤
+    - ⇞
     - N
     - M
     - {t: ',', s: <}
@@ -58,9 +58,9 @@ layers:
     - ←
     - →
     - SPACE
-    - DEL
-    - END
-    - PG DN
+    - ␡
+    - ⇥
+    - ⇟
     - BACKSPACE
   - - ENTER
     - ↑
@@ -92,16 +92,16 @@ layers:
   - ['', '', Y, KP 7, KP 8, KP 9, KP MINUS, \, ESC, A]
   - [S, D, F, G, '', ⌃, ⎇, ⌘, ⌃, '']
   - [H, KP 4, KP 5, KP 6, KP PLUS, '''', ⇧, Z, X, C]
-  - [V, B, HOME, PG UP, N, KP 1, KP 2, KP 3, KP ENTER, ⇧]
+  - [V, B, ⇤, ⇞, N, KP 1, KP 2, KP 3, KP ENTER, ⇧]
   - - fn
     - {t: '`', s: '~'}
     - CAPS
     - ←
     - →
-    - BSPC
-    - DEL
-    - END
-    - PG DN
+    - ⌫
+    - ␡
+    - ⇥
+    - ⇟
     - ENTER
   - - KP 0
     - ↑

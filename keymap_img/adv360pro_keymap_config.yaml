@@ -68,7 +68,13 @@ draw_config:
 
     text.hold {
         text-anchor: middle;
-        dominant-baseline: auto;
+        dominant-baseline: middle;
+        transform: translate(0pt, -10pt);
+    }
+    
+    text.hold_original {
+        text-anchor: middle;
+        dominant-baseline: middle;
     }
 
     text.shifted {
@@ -196,18 +202,19 @@ parse_config:
     '&ltog LGUI 8': {t: "Cancel\nFunc", h: '⌘'}
     '&ltog LGUI 9': {t: "Cancel\nAdjust", h: '⌘'}
     '&bootloader': "bootloader"
-    '&mmv MOVE_HOR(1250)': "MouseRight"
-    '&mmv MOVE_HOR(-1250)': "MouseLeft"
-    '&mmv MOVE_VERT(-1250)': "MouseUp"
-    '&mmv MOVE_VERT(1250)': "MouseDown"
-    '&mwh SCROLL_VERT(100)': "MouseScrollUp"
-    '&mwh SCROLL_VERT(-100)': "MouseScrollDown"
-    '&mwh SCROLL_HOR(100)': "MouseScrollRight"
-    '&mwh SCROLL_HOR(-100)': "MouseScrollLeft"
-    '&smart_mouse': "SmartMouseLayer"
-    '&mkp MB1': "MouseClickLeft"
-    '&mkp MB2': "MouseClickRight"
-    '&swapper': "Alt+Tab"
+    '&mmv MOVE_HOR(1250)': "🖱→"
+    '&mmv MOVE_HOR(-1250)': "🖱←"
+    '&mmv MOVE_VERT(-1250)': "🖱↑"
+    '&mmv MOVE_VERT(1250)': "🖱↓"
+    '&mwh SCROLL_VERT(100)': "🖱S↑"
+    '&mwh SCROLL_VERT(-100)': "🖱S↓"
+    '&mwh SCROLL_HOR(100)': "🖱S→"
+    '&mwh SCROLL_HOR(-100)': "🖱S←"
+    '&smart_mouse': "Smart🖱"
+    '&mkp MB1': "🖱C←"
+    '&mkp MB2': "🖱C→"
+    '&swapper': "⎇↹"
+    '&smart_nav': "Smart✥"
     '&win_sleep': "WinSleep"
   skip_binding_parsing: false
   zmk_keycode_map:
@@ -299,6 +306,12 @@ parse_config:
     TAB: ↹
     RETURN: '⏎'
     ESCAPE: '⎋'
+    BSPC: '⌫'
+    DEL: '␡'
+    HOME: '⇤'
+    END: '⇥'
+    PG_UP: '⇞'
+    PG_DN: '⇟'
     C_REWIND: '⏮'
     C_FAST_FORWARD: '⏭'
     C_PAUSE: '⏯'
@@ -323,9 +336,24 @@ parse_config:
     'LG(C)': '⌘C'
     'LG(V)': '⌘V'
     'LC(TAB)': '⌃↹'
+    'LS(TAB)': '⇧↹'
     'LS(LC(TAB))': '⌃⇧↹'
-#   zmk_combos:
+    'RS(LCTRL)': '⇧⌃'
+    'LA(LCTRL)': '⎇⌃'
+    'LG(LC(LEFT))': '⌘⌃←'
+    'LG(LC(RIGHT))': '⌘⌃→'
+    'LC(BSPC)': '^⌫'
+    'LC(DEL)': '^␡'
+    'LC(HOME)': '^⇤'
+    'LC(END)': '^⇥'
+  zmk_combos:
 #     combo_tog_nav_word: {'a': 'bottom', 'o': -0.25}
 #     combo_tog_num_word: {'a': 'bottom', 'o': 0.0}
 #     combo_return: {'a': 'bottom', 'o': 0.3}
 #     combo_capsword: {'k': "Caps\nWord"}
+    combo_mouse: {'a': 'top', 'o': 0.25}
+    combo_tab: {'k': "TAB"}
+    combo_repeat: {'k': "KRP\n⇧⌃"}
+    combo_cut: {'k': "^X/✄"}
+    combo_copy: {'k': "^⎀/⧉"}
+    combo_paste: {'k': "⇧⎀/⎘"}

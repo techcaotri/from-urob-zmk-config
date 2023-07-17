@@ -9,8 +9,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - fn
-    - fn
+    - "Smart\u2725"
+    - "Smart\u2725"
     - '6'
     - '7'
   - - '8'
@@ -43,7 +43,7 @@ layers:
     - F
     - G
     - num
-    - SmartMouseLayer
+    - "Smart\U0001F5B1"
     - H
     - J
     - t: K
@@ -68,7 +68,7 @@ layers:
     - t: '?'
       s: '!'
     - "\u21E7"
-    - SmartMouseLayer
+    - fn
     - t: '`'
       s: '~'
     - CAPS
@@ -76,21 +76,23 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
     - "\u2303"
     - SPACE
-    - DEL
-  - - HOME
-    - PG UP
+    - "\u2421"
+  - - "\u21E4"
+    - "\u21DE"
     - BKSP
     - RET
-    - END
-    - PG DN
+    - "\u21E5"
+    - "\u21DF"
   nav:
   - - t: '='
       s: +
@@ -99,8 +101,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - fn
-    - fn
+    - "Smart\u2725"
+    - "Smart\u2725"
     - '6'
     - '7'
   - - '8'
@@ -113,43 +115,43 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - LS(TAB)
-    - Alt+Tab
+    - "\u21E7\u21B9"
+    - "\u2387\u21B9"
     - t: "\u25BD"
       type: trans
   - - t: '&num_dance'
       h: num
     - nav
-    - PG UP
-    - t: BSPC
-      h: LC(BSPC)
+    - "\u21DE"
+    - t: "\u232B"
+      h: "^\u232B"
     - t: "\u2191"
-      h: LC(HOME)
-    - t: DEL
-      h: LC(DEL)
+      h: "^\u21E4"
+    - t: "\u2421"
+      h: "^\u2421"
     - t: "\u25BD"
       type: trans
     - \
     - ESC
-    - t: "\u2318"
-      h: sticky
-  - - t: "\u2387"
-      h: sticky
-    - t: "\u2303"
-      h: sticky
     - t: "\u21E7"
+      h: sticky
+  - - t: "\u2303"
+      h: sticky
+    - t: "\u2387"
+      h: sticky
+    - t: "\u2318"
       h: sticky
     - t: "\u25BD"
       type: trans
     - num
-    - SmartMouseLayer
-    - PG DN
+    - "Smart\U0001F5B1"
+    - "\u21DF"
     - t: "\u2190"
-      h: HOME
+      h: "\u21E4"
     - t: "\u2193"
-      h: LC(END)
+      h: "^\u21E5"
     - t: "\u2192"
-      h: END
+      h: "\u21E5"
   - - RET
     - ''''
     - "\u21E7"
@@ -170,7 +172,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - SmartMouseLayer
+    - fn
     - t: '`'
       s: '~'
     - CAPS
@@ -178,9 +180,11 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
@@ -188,32 +192,29 @@ layers:
     - CANCEL
     - t: "\u25BD"
       type: trans
-  - - HOME
-    - PG UP
+  - - "\u21E4"
+    - "\u21DE"
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
       type: trans
-    - END
-    - PG DN
+    - "\u21E5"
+    - "\u21DF"
   fn:
-  - - t: '='
-      s: +
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - t: fn
-      type: held
-    - fn
-    - '6'
-    - '7'
-  - - '8'
-    - '9'
-    - '0'
-    - t: '-'
-      s: _
+  - - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - "Smart\u2725"
+    - "Smart\u2725"
+    - F7
+    - F8
+  - - F9
+    - F10
+    - F11
+    - F12
     - "\u21B9"
     - F12
     - F7
@@ -239,17 +240,17 @@ layers:
     - t: "\u25BD"
       type: trans
     - num
-    - SmartMouseLayer
+    - "Smart\U0001F5B1"
     - t: "\u25BD"
       type: trans
-    - t: LG(LC(LEFT))
-      h: "\u21E7"
-    - t: VOL DN
-      h: "\u2303"
-    - t: LG(LC(RIGHT))
-      h: "\u2387"
-  - - t: "\u25BD"
+    - t: "\u25BD"
       type: trans
+    - t: VOL DN
+      h: "\u2387"
+    - t: "\u2318\u2303\u2190"
+      h: "\u2303"
+  - - t: "\u2318\u2303\u2192"
+      h: "\u21E7"
     - ''''
     - "\u21E7"
     - F10
@@ -269,7 +270,8 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - SmartMouseLayer
+    - t: fn
+      type: held
     - t: '`'
       s: '~'
     - CAPS
@@ -277,9 +279,11 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
@@ -288,14 +292,14 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - HOME
-    - PG UP
+  - - "\u21E4"
+    - "\u21DE"
     - 'VOL
 
       MUTE'
     - PP
-    - END
-    - PG DN
+    - "\u21E5"
+    - "\u21DF"
   num:
   - - t: '='
       s: +
@@ -304,8 +308,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - fn
-    - fn
+    - "Smart\u2725"
+    - "Smart\u2725"
     - '6'
     - '7'
   - - '8'
@@ -338,17 +342,17 @@ layers:
     - \
     - ESC
     - t: '0'
-      h: "\u2318"
-  - - t: '4'
-      h: "\u2387"
-    - t: '5'
-      h: "\u2303"
-    - t: '6'
       h: "\u21E7"
+  - - t: '4'
+      h: "\u2303"
+    - t: '5'
+      h: "\u2387"
+    - t: '6'
+      h: "\u2318"
     - t: "\u25BD"
       type: trans
     - num
-    - SmartMouseLayer
+    - "Smart\U0001F5B1"
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -379,7 +383,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - SmartMouseLayer
+    - fn
     - t: '`'
       s: '~'
     - CAPS
@@ -387,9 +391,11 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
@@ -398,14 +404,14 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - HOME
-    - PG UP
+  - - "\u21E4"
+    - "\u21DE"
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
       type: trans
-    - END
-    - PG DN
+    - "\u21E5"
+    - "\u21DF"
   sys:
   - - t: '='
       s: +
@@ -414,9 +420,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - t: fn
-      type: held
-    - fn
+    - "Smart\u2725"
+    - "Smart\u2725"
     - '6'
     - '7'
   - - '8'
@@ -456,7 +461,7 @@ layers:
       type: trans
     - bootloader
     - num
-    - SmartMouseLayer
+    - "Smart\U0001F5B1"
     - bootloader
     - t: "\u25BD"
       type: trans
@@ -489,7 +494,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - SmartMouseLayer
+    - fn
     - t: '`'
       s: '~'
     - CAPS
@@ -497,9 +502,11 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
@@ -508,14 +515,14 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - HOME
-    - PG UP
+  - - "\u21E4"
+    - "\u21DE"
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
       type: trans
-    - END
-    - PG DN
+    - "\u21E5"
+    - "\u21DF"
   mouse:
   - - t: '='
       s: +
@@ -524,8 +531,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - fn
-    - fn
+    - "Smart\u2725"
+    - "Smart\u2725"
     - '6'
     - '7'
   - - '8'
@@ -549,9 +556,9 @@ layers:
     - nav
     - t: "\u25BD"
       type: trans
-    - MouseScrollDown
-    - MouseUp
-    - MouseScrollUp
+    - "\U0001F5B1S\u2193"
+    - "\U0001F5B1\u2191"
+    - "\U0001F5B1S\u2191"
     - t: "\u25BD"
       type: trans
     - \
@@ -567,12 +574,12 @@ layers:
     - t: "\u25BD"
       type: trans
     - num
-    - SmartMouseLayer
-    - MouseScrollLeft
-    - MouseLeft
-    - MouseDown
-    - MouseRight
-  - - MouseScrollRight
+    - "Smart\U0001F5B1"
+    - "\U0001F5B1S\u2190"
+    - "\U0001F5B1\u2190"
+    - "\U0001F5B1\u2193"
+    - "\U0001F5B1\u2192"
+  - - "\U0001F5B1S\u2192"
     - ''''
     - "\u21E7"
     - t: "\u25BD"
@@ -596,7 +603,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - SmartMouseLayer
+    - fn
     - t: '`'
       s: '~'
     - CAPS
@@ -604,9 +611,11 @@ layers:
     - "\u2192"
     - "\u2191"
   - - "\u2193"
-    - MouseScrollDown
-    - MouseScrollUp
-    - ''
+    - t: '['
+      s: '{'
+    - t: ']'
+      s: '}'
+    - fn
     - "\u2303"
     - "\u2387"
     - "\u2318"
@@ -615,12 +624,12 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - HOME
-    - PG UP
-    - MouseClickRight
-    - MouseClickLeft
-    - END
-    - PG DN
+  - - "\u21E4"
+    - "\u21DE"
+    - "\U0001F5B1C\u2192"
+    - "\U0001F5B1C\u2190"
+    - "\u21E5"
+    - "\u21DF"
 combos:
 - p:
   - 16
@@ -641,17 +650,17 @@ combos:
 - p:
   - 16
   - 18
-  k: SmartMouseLayer
+  k: "Smart\U0001F5B1"
   l:
   - base
   - nav
   - num
+  a: top
+  o: 0.25
 - p:
   - 30
   - 31
-  k:
-    t: "\u21B9"
-    h: LA(LCTRL)
+  k: TAB
   l:
   - base
   - nav
@@ -659,9 +668,7 @@ combos:
 - p:
   - 31
   - 32
-  k:
-    t: '&key_repeat'
-    h: LS(LCTRL)
+  k: "KRP\n\u21E7\u2303"
   l:
   - base
   - nav
@@ -669,7 +676,7 @@ combos:
 - p:
   - 44
   - 46
-  k: LC(X)
+  k: "^X/\u2704"
   l:
   - base
   - nav
@@ -677,7 +684,7 @@ combos:
 - p:
   - 44
   - 45
-  k: LC(INS)
+  k: "^\u2380/\u29C9"
   l:
   - base
   - nav
@@ -685,7 +692,7 @@ combos:
 - p:
   - 45
   - 46
-  k: LS(INS)
+  k: "\u21E7\u2380/\u2398"
   l:
   - base
   - nav
@@ -693,7 +700,7 @@ combos:
 - p:
   - 23
   - 24
-  k: BSPC
+  k: "\u232B"
   l:
   - base
   - nav
@@ -701,7 +708,7 @@ combos:
 - p:
   - 24
   - 25
-  k: DEL
+  k: "\u2421"
   l:
   - base
   - nav
@@ -711,7 +718,7 @@ combos:
   - 38
   k:
     t: (
-    h: RS(LCTRL)
+    h: "\u21E7\u2303"
     s: <
   l:
   - base
@@ -721,7 +728,7 @@ combos:
   - 39
   k:
     t: )
-    h: LA(LCTRL)
+    h: "\u2387\u2303"
     s: '>'
   l:
   - base
