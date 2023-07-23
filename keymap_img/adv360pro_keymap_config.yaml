@@ -210,12 +210,14 @@ parse_config:
     '&mwh SCROLL_VERT(-100)': "🖱S↓"
     '&mwh SCROLL_HOR(100)': "🖱S→"
     '&mwh SCROLL_HOR(-100)': "🖱S←"
-    '&smart_mouse': "Smart🖱"
+    '&smart_mouse': "💡🖱"
     '&mkp MB1': "🖱C←"
     '&mkp MB2': "🖱C→"
     '&swapper': "⎇↹"
-    '&smart_nav': "Smart✥"
+    '&smart_nav': "💡✥"
     '&win_sleep': "WinSleep"
+    '&comma_morph': ",<;"
+    '&dot_morph': ".>:"
   skip_binding_parsing: false
   zmk_keycode_map:
     AMPERSAND: '&'
@@ -275,7 +277,6 @@ parse_config:
     SEMI: {t: ';', s: ':'}
     SEMICOLON:  {t: ';', s: ':'}
     SINGLE_QUOTE:  {t: '''', s: '"'}
-    SLASH: {t: '/', s: '?'}
     SLASH: {t: '/', s: '?'}
     SQT: ''''
     STAR: '*'
@@ -357,3 +358,5 @@ parse_config:
     combo_cut: {'k': "^X/✄"}
     combo_copy: {'k': "^⎀/⧉"}
     combo_paste: {'k': "⇧⎀/⎘"}
+    combo_lbkt: {'k':"[{"}
+    combo_rbkt: {'k':"]}"}
