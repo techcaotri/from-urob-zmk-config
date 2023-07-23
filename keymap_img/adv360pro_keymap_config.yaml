@@ -217,7 +217,7 @@ parse_config:
     '&smart_nav': "💡✥"
     '&win_sleep': "WinSleep"
     '&comma_morph': ",<;"
-    '&dot_morph': ".>:"
+    '&dot_morph': ".>"
   skip_binding_parsing: false
   zmk_keycode_map:
     AMPERSAND: '&'
@@ -232,10 +232,10 @@ parse_config:
     BSLH: \
     CARET: ^
     COLON: ':'
-    COMMA: {t: ',', s: '<'}
+    COMMA: {t: ',', h: '<'}
     DLLR: $
     DOLLAR: $
-    DOT: {t: '.', s: '>'}
+    DOT: {t: '.', h: '>'}
     DOUBLE_QUOTES: '"'
     DQT: '"'
     EQUAL: {t: '=', s: '+'}
@@ -274,8 +274,8 @@ parse_config:
     RIGHT_BRACKET: ']'
     RIGHT_PARENTHESIS: )
     RPAR: )
-    SEMI: {t: ';', s: ':'}
-    SEMICOLON:  {t: ';', s: ':'}
+    SEMI: {t: ';:'}
+    SEMICOLON:  {t: ';', h: ':'}
     SINGLE_QUOTE:  {t: '''', s: '"'}
     SLASH: {t: '/', s: '?'}
     SQT: ''''

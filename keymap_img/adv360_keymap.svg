@@ -172,8 +172,7 @@ path {
 <text x="128.0" y="266.0" class="tap">L</text>
 <text x="128.0" y="290.0" class="hold">⌃</text>
 <rect rx="6.0" ry="6.0" x="158.0" y="226.0" width="52.0" height="52.0" class="key"/>
-<text x="184.0" y="252.0" class="tap">;</text>
-<text x="184.0" y="228.0" class="shifted">:</text>
+<text x="184.0" y="252.0" class="tap">;:</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="226.0" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="252.0" class="tap">&#x27;</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="226.0" width="52.0" height="52.0" class="key"/>
@@ -198,10 +197,10 @@ path {
 <text x="128.0" y="322.0" class="tap">M</text>
 <rect rx="6.0" ry="6.0" x="158.0" y="282.0" width="52.0" height="52.0" class="key"/>
 <text x="184.0" y="308.0" class="tap">,</text>
-<text x="184.0" y="284.0" class="shifted">&lt;</text>
+<text x="184.0" y="332.0" class="hold">&lt;</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="282.0" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="308.0" class="tap">.</text>
-<text x="240.0" y="284.0" class="shifted">&gt;</text>
+<text x="240.0" y="332.0" class="hold">&gt;</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="282.0" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="308.0" class="tap">/</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="282.0" width="52.0" height="52.0" class="key"/>

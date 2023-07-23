@@ -50,7 +50,7 @@ layers:
       h: "\u2387"
     - t: L
       h: "\u2303"
-  - - t: ''''
+  - - t: ';:'
       h: "\u21E7"
     - ''''
     - "\u21E7"
@@ -61,8 +61,10 @@ layers:
     - B
     - N
     - M
-  - - ',;<'
-    - .:>
+  - - t: ','
+      h: <
+    - t: .
+      h: '>'
     - t: '?'
       s: '!'
     - "\u21E7"
@@ -261,10 +263,8 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
+  - - "\u21E4"
+    - "\u21E5"
     - t: "\u25BD"
       type: trans
     - "\u21E7"
