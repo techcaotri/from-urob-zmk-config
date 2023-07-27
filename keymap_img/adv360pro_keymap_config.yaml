@@ -72,9 +72,11 @@ draw_config:
         transform: translate(0pt, -10pt);
     }
     
-    text.hold_original {
+    /* styling for hold position text in combo box */
+    text.combo.hold {
         text-anchor: middle;
         dominant-baseline: middle;
+        transform: translate(0pt, 0pt);
     }
 
     text.shifted {
