@@ -203,6 +203,7 @@ cd "$HOST_ZMK_DIR/app"
 echo 2
 for board in $(echo $BOARDS | sed 's/,/ /g')
 do
+    echo $board
     compile_board $board
 done
 

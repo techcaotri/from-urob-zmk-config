@@ -17,7 +17,5 @@ include:
   #   shield: cradio_left
   # - board: nice_nano_v2
   #   shield: cradio_right
-  - board: bluemicro840_v1
-    shield: sofle_left
-  - board: bluemicro840_v1
-    shield: sofle_right
+  - board: adv360pro_left
+  - board: adv360pro_right

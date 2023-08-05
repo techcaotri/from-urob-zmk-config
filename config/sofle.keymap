@@ -1,0 +1,30 @@
+/* source keypos definitions */
+#include "../zmk-nodefree-config/keypos_def/keypos_60keys.h"
+
+/* map Sofle's extra keys */
+#define X_LT    &kp EQUAL &kp N1 &kp N2 &kp N3 &kp N4 &kp N5     &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS \
+                &kp TAB
+#define X_LT_FN &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 \
+                &kp TAB
+
+#define X_RT    &kp BSLH
+
+#define X_LM    &kp ESC
+#define X_RM    &kp SQT
+
+#define X_LB    &kp LSHFT
+#define X_RB    &kp RSHFT
+
+#define X_MB    &none &none
+
+#define X_LH    &kp CAPS  &mo FN  &mo NUM &kp SPACE &hml_fn MOUSE LGUI   &kp RET &kp LEFT &kp DOWN &kp UP &kp RIGHT 
+
+/* activate bluetooth */
+#define CONFIG_WIRELESS 1
+
+/* leds and backlights */
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/backlight.h>
+
+/* source the main keymap */
+#include "base.keymap"
