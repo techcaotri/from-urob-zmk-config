@@ -536,7 +536,6 @@ path {
 <text x="562.0" y="840.0" class="tap">⇤</text>
 <rect rx="6.0" ry="6.0" x="592.0" y="814.0" width="52.0" height="52.0" class="key"/>
 <text x="618.0" y="840.0" class="tap">↑</text>
-<text x="618.0" y="864.0" class="hold">^⇤</text>
 <rect rx="6.0" ry="6.0" x="648.0" y="814.0" width="52.0" height="52.0" class="key"/>
 <text x="674.0" y="840.0" class="tap">⇥</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="814.0" width="52.0" height="52.0" class="trans key"/>
@@ -561,7 +560,6 @@ path {
 <text x="562.0" y="896.0" class="tap">←</text>
 <rect rx="6.0" ry="6.0" x="592.0" y="870.0" width="52.0" height="52.0" class="key"/>
 <text x="618.0" y="896.0" class="tap">↓</text>
-<text x="618.0" y="920.0" class="hold">^⇥</text>
 <rect rx="6.0" ry="6.0" x="648.0" y="870.0" width="52.0" height="52.0" class="key"/>
 <text x="674.0" y="896.0" class="tap">→</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="870.0" width="52.0" height="52.0" class="trans key"/>
