@@ -191,8 +191,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - t: "\u25BD"
-      type: trans
+    - "\u21DE"
     - "\u21E4"
   - - "\u2191"
     - "\u21E5"
@@ -210,8 +209,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - t: "\u25BD"
-      type: trans
+  - - "\u21DF"
     - "\u2190"
     - "\u2193"
     - "\u2192"
