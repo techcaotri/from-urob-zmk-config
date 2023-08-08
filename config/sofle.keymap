@@ -17,8 +17,8 @@
 
 #define X_MB    &tog NUM &tog NAV
 
-#define X_LH    &kp CAPS  &mo FN  &mo NUM &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
-#define X_LH_NUM    &kp CAPS  &mo FN  &mo SYS &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
+#define X_LH    &kp CAPS  &mo NUM  &mo FN  &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
+#define X_LH_NUM    &kp CAPS  &mo SYS &mo FN  &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1

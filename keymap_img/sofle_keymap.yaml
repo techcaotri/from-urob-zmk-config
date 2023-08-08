@@ -64,8 +64,8 @@ layers:
       s: '?'
     - "\u21E7"
   - - CAPS
-    - fn
     - num
+    - fn
     - SPACE
     - t: "\u2318"
       h: mouse
@@ -153,8 +153,8 @@ layers:
       type: trans
     - "\u21E7"
   - - CAPS
-    - fn
     - num
+    - fn
     - SPACE
     - t: "\u2318"
       h: mouse
@@ -241,9 +241,9 @@ layers:
       type: trans
     - "\u21E7"
   - - CAPS
+    - num
     - t: fn
       type: held
-    - num
     - SPACE
     - t: "\u2318"
       h: mouse
@@ -334,9 +334,9 @@ layers:
       type: trans
     - "\u21E7"
   - - CAPS
-    - fn
     - t: sys
       type: held
+    - fn
     - SPACE
     - t: "\u2318"
       h: mouse
@@ -426,9 +426,9 @@ layers:
       type: trans
     - "\u21E7"
   - - CAPS
-    - fn
     - t: num
       type: held
+    - fn
     - SPACE
     - t: "\u2318"
       h: mouse
@@ -517,8 +517,8 @@ layers:
       type: trans
     - "\u21E7"
   - - CAPS
-    - fn
     - num
+    - fn
     - SPACE
     - t: "\u2318"
       h: mouse

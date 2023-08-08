@@ -195,9 +195,9 @@ path {
 <rect rx="6.0" ry="6.0" x="144.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="322.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="200.0" y="296.0" width="52.0" height="52.0" class="key"/>
-<text x="226.0" y="322.0" class="tap">fn</text>
+<text x="226.0" y="322.0" class="tap">num</text>
 <rect rx="6.0" ry="6.0" x="256.0" y="296.0" width="52.0" height="52.0" class="key"/>
-<text x="282.0" y="322.0" class="tap">num</text>
+<text x="282.0" y="322.0" class="tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="322.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="296.0" width="52.0" height="52.0" class="key"/>
@@ -404,9 +404,9 @@ path {
 <rect rx="6.0" ry="6.0" x="144.0" y="646.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="672.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="200.0" y="646.0" width="52.0" height="52.0" class="key"/>
-<text x="226.0" y="672.0" class="tap">fn</text>
+<text x="226.0" y="672.0" class="tap">num</text>
 <rect rx="6.0" ry="6.0" x="256.0" y="646.0" width="52.0" height="52.0" class="key"/>
-<text x="282.0" y="672.0" class="tap">num</text>
+<text x="282.0" y="672.0" class="tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="646.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="672.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="646.0" width="52.0" height="52.0" class="key"/>
@@ -596,10 +596,10 @@ path {
 <text x="786.0" y="952.0" class="tap">⇧</text>
 <rect rx="6.0" ry="6.0" x="144.0" y="982.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="1008.0" class="tap">CAPS</text>
-<rect rx="6.0" ry="6.0" x="200.0" y="982.0" width="52.0" height="52.0" class="held key"/>
-<text x="226.0" y="1008.0" class="held tap">fn</text>
-<rect rx="6.0" ry="6.0" x="256.0" y="982.0" width="52.0" height="52.0" class="key"/>
-<text x="282.0" y="1008.0" class="tap">num</text>
+<rect rx="6.0" ry="6.0" x="200.0" y="982.0" width="52.0" height="52.0" class="key"/>
+<text x="226.0" y="1008.0" class="tap">num</text>
+<rect rx="6.0" ry="6.0" x="256.0" y="982.0" width="52.0" height="52.0" class="held key"/>
+<text x="282.0" y="1008.0" class="held tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="982.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="1008.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="982.0" width="52.0" height="52.0" class="key"/>
@@ -730,10 +730,10 @@ path {
 <text x="786.0" y="1302.0" class="tap">⇧</text>
 <rect rx="6.0" ry="6.0" x="144.0" y="1332.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="1358.0" class="tap">CAPS</text>
-<rect rx="6.0" ry="6.0" x="200.0" y="1332.0" width="52.0" height="52.0" class="key"/>
-<text x="226.0" y="1358.0" class="tap">fn</text>
-<rect rx="6.0" ry="6.0" x="256.0" y="1332.0" width="52.0" height="52.0" class="held key"/>
-<text x="282.0" y="1358.0" class="held tap">sys</text>
+<rect rx="6.0" ry="6.0" x="200.0" y="1332.0" width="52.0" height="52.0" class="held key"/>
+<text x="226.0" y="1358.0" class="held tap">sys</text>
+<rect rx="6.0" ry="6.0" x="256.0" y="1332.0" width="52.0" height="52.0" class="key"/>
+<text x="282.0" y="1358.0" class="tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="1332.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="1358.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="1332.0" width="52.0" height="52.0" class="key"/>
@@ -934,10 +934,10 @@ path {
 <text x="786.0" y="1638.0" class="tap">⇧</text>
 <rect rx="6.0" ry="6.0" x="144.0" y="1668.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="1694.0" class="tap">CAPS</text>
-<rect rx="6.0" ry="6.0" x="200.0" y="1668.0" width="52.0" height="52.0" class="key"/>
-<text x="226.0" y="1694.0" class="tap">fn</text>
-<rect rx="6.0" ry="6.0" x="256.0" y="1668.0" width="52.0" height="52.0" class="held key"/>
-<text x="282.0" y="1694.0" class="held tap">num</text>
+<rect rx="6.0" ry="6.0" x="200.0" y="1668.0" width="52.0" height="52.0" class="held key"/>
+<text x="226.0" y="1694.0" class="held tap">num</text>
+<rect rx="6.0" ry="6.0" x="256.0" y="1668.0" width="52.0" height="52.0" class="key"/>
+<text x="282.0" y="1694.0" class="tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="1668.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="1694.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="1668.0" width="52.0" height="52.0" class="key"/>
@@ -1065,9 +1065,9 @@ path {
 <rect rx="6.0" ry="6.0" x="144.0" y="2004.0" width="52.0" height="52.0" class="key"/>
 <text x="170.0" y="2030.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="200.0" y="2004.0" width="52.0" height="52.0" class="key"/>
-<text x="226.0" y="2030.0" class="tap">fn</text>
+<text x="226.0" y="2030.0" class="tap">num</text>
 <rect rx="6.0" ry="6.0" x="256.0" y="2004.0" width="52.0" height="52.0" class="key"/>
-<text x="282.0" y="2030.0" class="tap">num</text>
+<text x="282.0" y="2030.0" class="tap">fn</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="2004.0" width="52.0" height="52.0" class="key"/>
 <text x="338.0" y="2030.0" class="tap">SPACE</text>
 <rect rx="6.0" ry="6.0" x="368.0" y="2004.0" width="52.0" height="52.0" class="held key"/>
