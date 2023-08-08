@@ -210,9 +210,9 @@ path {
 <text x="184.0" y="322.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="322.0" class="tap">←</text>
-<text x="240.0" y="346.0" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="322.0" class="tap">→</text>
+<text x="296.0" y="346.0" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="322.0" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="296.0" width="52.0" height="52.0" class="key"/>
@@ -475,9 +475,9 @@ path {
 <text x="184.0" y="829.0040716566575" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="829.0040716566575" class="tap">←</text>
-<text x="240.0" y="853.0040716566575" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="829.0040716566575" class="tap">→</text>
+<text x="296.0" y="853.0040716566575" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="829.0040716566575" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
@@ -651,8 +651,8 @@ path {
 <text x="408.0" y="1178.008143313315" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="634.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="660.0" y="1154.008143313315" class="tap">nav</text>
-<rect rx="6.0" ry="6.0" x="690.0" y="1128.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="716.0" y="1154.008143313315" class="trans tap">▽</text>
+<rect rx="6.0" ry="6.0" x="690.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="716.0" y="1154.008143313315" class="tap">⇞</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="1154.008143313315" class="tap">⇤</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
@@ -679,8 +679,8 @@ path {
 <text x="408.0" y="1210.008143313315" class="tap">num</text>
 <rect rx="6.0" ry="6.0" x="634.0" y="1184.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="660.0" y="1210.008143313315" class="tap">💡🖱</text>
-<rect rx="6.0" ry="6.0" x="690.0" y="1184.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="716.0" y="1210.008143313315" class="trans tap">▽</text>
+<rect rx="6.0" ry="6.0" x="690.0" y="1184.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="716.0" y="1210.008143313315" class="tap">⇟</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1184.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="1210.008143313315" class="tap">←</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1184.008143313315" width="52.0" height="52.0" class="key"/>
@@ -724,9 +724,9 @@ path {
 <text x="184.0" y="1322.008143313315" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="1322.008143313315" class="tap">←</text>
-<text x="240.0" y="1346.008143313315" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="1322.008143313315" class="tap">→</text>
+<text x="296.0" y="1346.008143313315" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="1322.008143313315" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
@@ -914,9 +914,9 @@ path {
 <text x="184.0" y="1829.0122149699725" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="1829.0122149699725" class="tap">←</text>
-<text x="240.0" y="1853.0122149699725" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="1829.0122149699725" class="tap">→</text>
+<text x="296.0" y="1853.0122149699725" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="1829.0122149699725" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
@@ -1174,9 +1174,9 @@ path {
 <text x="184.0" y="2322.01628662663" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="2322.01628662663" class="tap">←</text>
-<text x="240.0" y="2346.01628662663" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="2322.01628662663" class="tap">→</text>
+<text x="296.0" y="2346.01628662663" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="2322.01628662663" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
@@ -1360,9 +1360,9 @@ path {
 <text x="184.0" y="2815.0203582832874" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="2815.0203582832874" class="tap">←</text>
-<text x="240.0" y="2839.0203582832874" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="2815.0203582832874" class="tap">→</text>
+<text x="296.0" y="2839.0203582832874" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="772.0" y="2815.0203582832874" class="tap">↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
