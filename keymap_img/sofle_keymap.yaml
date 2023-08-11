@@ -469,9 +469,9 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - "\U0001F5B1S\u2193"
-  - - "\U0001F5B1\u2191"
     - "\U0001F5B1S\u2191"
+  - - "\U0001F5B1\u2191"
+    - "\U0001F5B1S\u2193"
     - t: "\u25BD"
       type: trans
     - \
@@ -516,22 +516,23 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-  - - CAPS
-    - num
-    - fn
-    - SPACE
-    - t: "\u2318"
-      h: mouse
-      type: held
-    - BKSP
-    - RET
-    - t: '`'
-      h: "\u2318"
-      s: '~'
-    - t: '['
-      s: '{'
-    - t: ']'
-      s: '}'
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - type: held
+    - "\U0001F5B1C\u2192"
+    - "\U0001F5B1C\u2190"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
 combos:
 - p:
   - 14

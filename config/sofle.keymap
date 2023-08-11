@@ -19,6 +19,7 @@
 
 #define X_LH    &kp CAPS  &mo NUM  &mo FN  &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
 #define X_LH_NUM    &kp CAPS  &mo SYS &mo FN  &kp SPACE &hml_fn MOUSE LGUI   &kp BKSP &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT 
+#define X_LH_MOUSE  ___       ___     ___     ___       ___                  U_BTN2   U_BTN1  ___             ___      ___ 
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
