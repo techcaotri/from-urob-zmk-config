@@ -1295,11 +1295,11 @@ path {
 <rect rx="6.0" ry="6.0" x="690.0" y="2621.0203582832874" width="52.0" height="52.0" class="trans key"/>
 <text x="716.0" y="2647.0203582832874" class="trans tap">▽</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="2621.0203582832874" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="2647.0203582832874" class="tap">🖱S↓</text>
+<text x="772.0" y="2647.0203582832874" class="tap">🖱S↑</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="2621.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="2647.0203582832874" class="tap">🖱↑</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="2621.0203582832874" width="52.0" height="52.0" class="key"/>
-<text x="884.0" y="2647.0203582832874" class="tap">🖱S↑</text>
+<text x="884.0" y="2647.0203582832874" class="tap">🖱S↓</text>
 <rect rx="6.0" ry="6.0" x="914.0" y="2635.0203582832874" width="52.0" height="52.0" class="trans key"/>
 <text x="940.0" y="2661.0203582832874" class="trans tap">▽</text>
 <rect rx="6.0" ry="6.0" x="970.0" y="2635.0203582832874" width="66.0" height="52.0" class="key"/>

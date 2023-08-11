@@ -574,9 +574,9 @@ layers:
     - nav
     - t: "\u25BD"
       type: trans
-    - "\U0001F5B1S\u2193"
-    - "\U0001F5B1\u2191"
     - "\U0001F5B1S\u2191"
+    - "\U0001F5B1\u2191"
+    - "\U0001F5B1S\u2193"
     - t: "\u25BD"
       type: trans
     - \
