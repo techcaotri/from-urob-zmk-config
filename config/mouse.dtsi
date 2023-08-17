@@ -1,14 +1,32 @@
 #include <dt-bindings/zmk/mouse.h>
 
+/ {
+	behaviors {
+		inc_dec_mwh: behavior_sensor_rotate_mouse_wheel {
+			compatible = "zmk,behavior-sensor-rotate-var";
+			label = "ENC_MOUSE_WHEEL";
+			#sensor-binding-cells = <2>;
+         	bindings = <&mwh>, <&mwh>;
+		};
+
+		inc_dec_mmv: behavior_sensor_rotate_mouse_movement {
+			compatible = "zmk,behavior-sensor-rotate-var";
+			label = "ENC_MOUSE_MOVEMENT";
+			#sensor-binding-cells = <2>;
+         	bindings = <&mmv>, <&mmv>;
+		};
+	};
+};
+
 &mmv {
   acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <1500>;    // 40
+  time-to-max-speed-ms = <1000>;    // 40
   delay-ms = <0>;                   // 0
 };
 
 &mwh {
   acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <5000>;    // 40
+  time-to-max-speed-ms = <0>;    // 40
   delay-ms = <0>;                   // 10
 };
 
