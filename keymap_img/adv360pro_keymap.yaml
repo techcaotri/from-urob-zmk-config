@@ -271,10 +271,8 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
+    - INS
+    - "\u2421"
   - - t: "\u25BD"
       type: trans
     - t: "\u25BD"

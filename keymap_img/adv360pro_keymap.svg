@@ -705,10 +705,10 @@ path {
 <text x="296.0" y="1266.008143313315" class="trans tap">▽</text>
 <rect rx="6.0" ry="6.0" x="326.0" y="1240.008143313315" width="52.0" height="52.0" class="trans key"/>
 <text x="352.0" y="1266.008143313315" class="trans tap">▽</text>
-<rect rx="6.0" ry="6.0" x="690.0" y="1240.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="716.0" y="1266.008143313315" class="trans tap">▽</text>
-<rect rx="6.0" ry="6.0" x="746.0" y="1240.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="772.0" y="1266.008143313315" class="trans tap">▽</text>
+<rect rx="6.0" ry="6.0" x="690.0" y="1240.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="716.0" y="1266.008143313315" class="tap">INS</text>
+<rect rx="6.0" ry="6.0" x="746.0" y="1240.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="772.0" y="1266.008143313315" class="tap">␡</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1240.008143313315" width="52.0" height="52.0" class="trans key"/>
 <text x="828.0" y="1266.008143313315" class="trans tap">▽</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="1240.008143313315" width="52.0" height="52.0" class="trans key"/>
