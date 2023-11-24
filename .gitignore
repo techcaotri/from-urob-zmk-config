@@ -1,1 +1,6 @@
 .venv
+.ccls-cache/
+.west
+modules/
+zephyr/
+zmk/
