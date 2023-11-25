@@ -11,4 +11,4 @@ echo 'Adjusting keymap yaml...'
 
 echo 'Drawing keymap...'
 keymap -c adv360pro_keymap_config.yaml draw --select-layers base nav fn num sys mouse  -k adv360pro_urob adv360pro_keymap.yaml > adv360pro_keymap.svg
-keymap -c adv360pro_keymap_config.yaml draw --select-layers base nav fn num sys mouse  -k sofle sofle_keymap.yaml > sofle_keymap.svg
+keymap -c adv360pro_keymap_config.yaml draw --select-layers base nav fn num sys mouse  -k sofle_nicenanov2_choc sofle_keymap.yaml > sofle_keymap.svg

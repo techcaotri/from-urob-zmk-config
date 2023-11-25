@@ -52,8 +52,9 @@ layers:
     - C
   - - V
     - B
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+    - BKSP
     - N
     - M
     - t: ','
@@ -63,13 +64,11 @@ layers:
     - t: /
       s: '?'
     - "\u21E7"
-  - - CAPS
+  - - num
+    - CAPS
     - num
     - fn
     - SPACE
-    - t: "\u2318"
-      h: mouse
-    - BKSP
     - RET
     - t: '`'
       h: "\u2318"
@@ -78,6 +77,8 @@ layers:
       s: '{'
     - t: ']'
       s: '}'
+    - t: "\u25BD"
+      type: trans
   nav:
   - - t: '='
       s: +
@@ -143,8 +144,9 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+    - BKSP
     - INS
     - "\u21B9"
     - <
@@ -152,13 +154,11 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-  - - CAPS
+  - - num
+    - CAPS
     - num
     - fn
     - SPACE
-    - t: "\u2318"
-      h: mouse
-    - BKSP
     - RET
     - t: '`'
       h: "\u2318"
@@ -167,6 +167,8 @@ layers:
       s: '{'
     - t: ']'
       s: '}'
+    - t: "\u25BD"
+      type: trans
   fn:
   - - F1
     - F2
@@ -227,8 +229,9 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+    - BKSP
     - INS
     - "\u2421"
     - t: "\u25BD"
@@ -238,14 +241,12 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-  - - CAPS
+  - - num
+    - CAPS
     - num
     - t: fn
       type: held
     - SPACE
-    - t: "\u2318"
-      h: mouse
-    - BKSP
     - RET
     - t: '`'
       h: "\u2318"
@@ -254,6 +255,8 @@ layers:
       s: '{'
     - t: ']'
       s: '}'
+    - t: "\u25BD"
+      type: trans
   num:
   - - t: '='
       s: +
@@ -318,8 +321,9 @@ layers:
   - - '3'
     - t: "\u25BD"
       type: trans
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+    - BKSP
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -331,14 +335,12 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-  - - CAPS
+  - - num
+    - CAPS
     - t: sys
       type: held
     - fn
     - SPACE
-    - t: "\u2318"
-      h: mouse
-    - BKSP
     - RET
     - t: '`'
       h: "\u2318"
@@ -347,6 +349,8 @@ layers:
       s: '{'
     - t: ']'
       s: '}'
+    - t: "\u25BD"
+      type: trans
   sys:
   - - t: '='
       s: +
@@ -410,8 +414,9 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+    - BKSP
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -423,14 +428,12 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-  - - CAPS
+  - - num
+    - CAPS
     - t: num
       type: held
     - fn
     - SPACE
-    - t: "\u2318"
-      h: mouse
-    - BKSP
     - RET
     - t: '`'
       h: "\u2318"
@@ -439,6 +442,8 @@ layers:
       s: '{'
     - t: ']'
       s: '}'
+    - t: "\u25BD"
+      type: trans
   mouse:
   - - t: '='
       s: +
@@ -501,8 +506,10 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - num
-    - nav
+    - t: "\u2318"
+      h: mouse
+      type: held
+    - BKSP
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -522,7 +529,8 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - type: held
+    - t: "\u25BD"
+      type: trans
     - "\U0001F5B1C\u2192"
     - "\U0001F5B1C\u2190"
     - t: "\u25BD"
