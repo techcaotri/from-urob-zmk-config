@@ -16,10 +16,11 @@
 #define X_RB    &kp RSHFT
 
 #define X_MB    &hml_fn MOUSE LGUI &kp BKSP
+#define X_MB_M  &hml_fn MOUSE LGUI U_BTN1
 
-#define X_LH    &tog NUM &kp CAPS  &mo NUM  &mo FN  &kp SPACE    &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT ___ 
-#define X_LH_NUM    &tog NUM &kp CAPS &mo SYS &mo FN  &kp SPACE   &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT ___ 
-#define X_LH_MOUSE  ___       ___     ___     ___       ___                  U_BTN2   U_BTN1  ___             ___      ___ 
+#define X_LH    &tog NUM &kp CAPS  &mo NUM  &mo FN  &kp SPACE    &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT ___ &tog NAV U_WH_R U_WH_U U_WH_L U_WH_D 
+#define X_LH_NUM    &tog NUM &kp CAPS &mo SYS &mo FN  &kp SPACE   &kp RET &hmr LGUI GRAVE &kp LBKT &kp RBKT ___ &tog NAV U_WH_R U_WH_U U_WH_L U_WH_D 
+#define X_LH_MOUSE  ___       ___     ___     ___       ___                  U_BTN2     ___             ___      ___ 
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
