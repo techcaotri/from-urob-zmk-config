@@ -85,7 +85,9 @@ done
 [[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/zmk"
 [[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/zmk-config"
 
-[[ -z $BOARDS ]] && BOARDS="$(grep '^[[:space:]]*\-[[:space:]]*board:' $HOST_CONFIG_DIR/build.yaml | sed 's/^.*: *//')"
+[[ -z $BOARDS ]] && BOARDS="$(grep '^[[:space:]]*\-[[:space:]]*board:' $HOST_CONFIG_DIR/build.yaml | sed 's/^.*: *//' | tr '\n' ',' | sed 's/,$//')"
+
+[[ -z $SHIELDS ]] && SHIELDS="$(grep '^[[:space:]]*[[:space:]]*shield:' $HOST_CONFIG_DIR/build.yaml | sed 's/^.*: *//' | tr '\n' ',' | sed 's/,$//')"
 
 [[ -z $CLEAR_CACHE ]] && CLEAR_CACHE="false"
 
@@ -168,15 +170,17 @@ fi
 # usage: compile_board board
 compile_board () {
     echo -en "\n$(tput setaf 2)Building $1... $(tput sgr0)"
-    BUILD_DIR="${1}_$SUFFIX"
+    echo -en "\n$(tput setaf 2)Building $2... $(tput sgr0)"
+    BUILD_DIR="${1}_${2}_$SUFFIX"
     LOGFILE="$LOG_DIR/zmk_build_$1.log"
+    [[ -z $2 ]] && SHIELD="" || SHIELD="-DSHIELD=$2" 
 
     echo ""
     echo "$(pwd)"
     echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1"
+        -- -DZMK_CONFIG="$CONFIG_DIR" $SHIELD -Wno-dev 2>&1 | tee "$LOGFILE""
     $DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1
+        -- -DZMK_CONFIG="$CONFIG_DIR" $SHIELD -Wno-dev 2>&1 | tee "$LOGFILE"
     if [[ $? -eq 0 ]]
     then
         # echo "$(tput setaf 4)Success: $1 done$(tput sgr0)"
@@ -188,7 +192,7 @@ compile_board () {
         else
             TYPE="bin"
         fi
-        OUTPUT="$OUTPUT_DIR/$1-zmk.$TYPE"
+        OUTPUT="$OUTPUT_DIR/$1-$2-zmk.$TYPE"
         [[ -f $OUTPUT ]] && [[ ! -L $OUTPUT ]] && mv "$OUTPUT" "$OUTPUT.bak"
         cp "$HOST_ZMK_DIR/app/build/$BUILD_DIR/zephyr/zmk.$TYPE" "$OUTPUT"
     else
@@ -201,9 +205,29 @@ compile_board () {
 echo 1
 cd "$HOST_ZMK_DIR/app"
 echo 2
-for board in $(echo $BOARDS | sed 's/,/ /g')
-do
-    echo $board
-    compile_board $board
+echo "Building for boards: $BOARDS , shields: $SHIELDS"
+
+# Save the current IFS
+original_ifs="$IFS"
+# Set IFS to space for splitting the list
+IFS=' '
+
+BOARD_LIST="$(echo $BOARDS | sed 's/,/ /g')"
+BOARD_LIST=($BOARD_LIST)
+echo "BOARD_LIST: $BOARD_LIST"
+SHIELD_LIST="$(echo "$SHIELDS" | sed 's/,/ /g')"
+SHIELD_LIST=($SHIELD_LIST)
+echo "SHIELD_LIST: $SHIELD_LIST"
+
+# Restore IFS
+IFS="$original_ifs"
+
+for idx in "${!BOARD_LIST[@]}"; do
+  echo $idx
+  board=${BOARD_LIST[$idx]}
+  echo $board
+  shield=${SHIELD_LIST[$idx]}
+  echo $shield
+  compile_board $board $shield
 done
 
