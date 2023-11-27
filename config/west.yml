@@ -4,10 +4,13 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: myurob
+      url-base: https://github.com/techcaotri
+
   projects:
     - name: zmk
-      remote: urob
-      revision: main
+      remote: myurob
+      revision: main-sofle-nicenanov2-choc
       import: app/west.yml
   self:
     path: config
