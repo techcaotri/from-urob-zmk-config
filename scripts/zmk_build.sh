@@ -174,9 +174,9 @@ compile_board () {
     echo ""
     echo "$(pwd)"
     echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1"
+        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev 2>&1 | tee "$LOGFILE""
     $DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev > "$LOGFILE" 2>&1
+        -- -DZMK_CONFIG="$CONFIG_DIR" -Wno-dev 2>&1 | tee "$LOGFILE" 
     if [[ $? -eq 0 ]]
     then
         # echo "$(tput setaf 4)Success: $1 done$(tput sgr0)"
@@ -198,9 +198,7 @@ compile_board () {
     fi
 }
 
-echo 1
 cd "$HOST_ZMK_DIR/app"
-echo 2
 for board in $(echo $BOARDS | sed 's/,/ /g')
 do
     compile_board $board
