@@ -114,11 +114,11 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 ZMK_BEHAVIOR(smart_num, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
+    quick-tap-ms = <120>;
     bindings = <&mo>, <&num_dance>;
 )
 ZMK_BEHAVIOR(num_dance, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <120>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
 &num_word {  // num-word, requires PR #1451
