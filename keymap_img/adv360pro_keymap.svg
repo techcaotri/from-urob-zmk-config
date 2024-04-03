@@ -210,12 +210,13 @@ path {
 <text x="184.0" y="322.0" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="322.0" class="tap">←</text>
+<text x="240.0" y="346.0" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="322.0" class="tap">→</text>
 <text x="296.0" y="346.0" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="296.0" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="322.0" class="tap">↑</text>
-<text x="772.0" y="346.0" class="hold">⌘</text>
+<text x="772.0" y="322.0" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="346.0" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="296.0" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="322.0" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="296.0" width="52.0" height="52.0" class="key"/>
@@ -476,12 +477,13 @@ path {
 <text x="184.0" y="829.0040716566575" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="829.0040716566575" class="tap">←</text>
+<text x="240.0" y="853.0040716566575" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="829.0040716566575" class="tap">→</text>
 <text x="296.0" y="853.0040716566575" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="829.0040716566575" class="tap">↑</text>
-<text x="772.0" y="853.0040716566575" class="hold">⌘</text>
+<text x="772.0" y="829.0040716566575" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="853.0040716566575" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="829.0040716566575" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="803.0040716566575" width="52.0" height="52.0" class="key"/>
@@ -638,14 +640,14 @@ path {
 <text x="1003.0" y="1112.008143313315" class="tap">F12</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="1142.008143313315" width="66.0" height="52.0" class="key"/>
 <text x="65.0" y="1168.008143313315" class="tap">↹</text>
-<rect rx="6.0" ry="6.0" x="102.0" y="1142.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="128.0" y="1168.008143313315" class="trans tap">▽</text>
-<rect rx="6.0" ry="6.0" x="158.0" y="1128.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="184.0" y="1154.008143313315" class="trans tap">▽</text>
-<rect rx="6.0" ry="6.0" x="214.0" y="1128.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="240.0" y="1154.008143313315" class="trans tap">▽</text>
-<rect rx="6.0" ry="6.0" x="270.0" y="1128.008143313315" width="52.0" height="52.0" class="trans key"/>
-<text x="296.0" y="1154.008143313315" class="trans tap">▽</text>
+<rect rx="6.0" ry="6.0" x="102.0" y="1142.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="128.0" y="1168.008143313315" class="tap">!</text>
+<rect rx="6.0" ry="6.0" x="158.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="184.0" y="1154.008143313315" class="tap">#</text>
+<rect rx="6.0" ry="6.0" x="214.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="240.0" y="1154.008143313315" class="tap">*</text>
+<rect rx="6.0" ry="6.0" x="270.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
+<text x="296.0" y="1154.008143313315" class="tap">&amp;</text>
 <rect rx="6.0" ry="6.0" x="326.0" y="1128.008143313315" width="52.0" height="52.0" class="trans key"/>
 <text x="352.0" y="1154.008143313315" class="trans tap">▽</text>
 <rect rx="6.0" ry="6.0" x="382.0" y="1128.008143313315" width="52.0" height="52.0" class="key"/>
@@ -726,12 +728,13 @@ path {
 <text x="184.0" y="1322.008143313315" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="1322.008143313315" class="tap">←</text>
+<text x="240.0" y="1346.008143313315" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="1322.008143313315" class="tap">→</text>
 <text x="296.0" y="1346.008143313315" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="1322.008143313315" class="tap">↑</text>
-<text x="772.0" y="1346.008143313315" class="hold">⌘</text>
+<text x="772.0" y="1322.008143313315" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="1346.008143313315" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="1322.008143313315" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="1296.008143313315" width="52.0" height="52.0" class="key"/>
@@ -917,12 +920,13 @@ path {
 <text x="184.0" y="1829.0122149699725" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="1829.0122149699725" class="tap">←</text>
+<text x="240.0" y="1853.0122149699725" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="1829.0122149699725" class="tap">→</text>
 <text x="296.0" y="1853.0122149699725" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="1829.0122149699725" class="tap">↑</text>
-<text x="772.0" y="1853.0122149699725" class="hold">⌘</text>
+<text x="772.0" y="1829.0122149699725" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="1853.0122149699725" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="1829.0122149699725" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="1803.0122149699725" width="52.0" height="52.0" class="key"/>
@@ -1178,12 +1182,13 @@ path {
 <text x="184.0" y="2322.01628662663" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="2322.01628662663" class="tap">←</text>
+<text x="240.0" y="2346.01628662663" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="2322.01628662663" class="tap">→</text>
 <text x="296.0" y="2346.01628662663" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="2322.01628662663" class="tap">↑</text>
-<text x="772.0" y="2346.01628662663" class="hold">⌘</text>
+<text x="772.0" y="2322.01628662663" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="2346.01628662663" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="2322.01628662663" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="2296.01628662663" width="52.0" height="52.0" class="key"/>
@@ -1365,12 +1370,13 @@ path {
 <text x="184.0" y="2815.0203582832874" class="tap">CAPS</text>
 <rect rx="6.0" ry="6.0" x="214.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="240.0" y="2815.0203582832874" class="tap">←</text>
+<text x="240.0" y="2839.0203582832874" class="hold">⌘</text>
 <rect rx="6.0" ry="6.0" x="270.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="296.0" y="2815.0203582832874" class="tap">→</text>
 <text x="296.0" y="2839.0203582832874" class="hold">fn</text>
 <rect rx="6.0" ry="6.0" x="746.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
-<text x="772.0" y="2815.0203582832874" class="tap">↑</text>
-<text x="772.0" y="2839.0203582832874" class="hold">⌘</text>
+<text x="772.0" y="2815.0203582832874" class="tap" style="font-size: 70%">&amp;num_dance</text>
+<text x="772.0" y="2839.0203582832874" class="hold">num</text>
 <rect rx="6.0" ry="6.0" x="802.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
 <text x="828.0" y="2815.0203582832874" class="tap">↓</text>
 <rect rx="6.0" ry="6.0" x="858.0" y="2789.0203582832874" width="52.0" height="52.0" class="key"/>
