@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Parse input arguments
 while [[ $# -gt 0 ]]; do
@@ -204,6 +204,7 @@ compile_board () {
 
 echo 1
 echo $SHELL
+echo "$(which python)"
 cd "$HOST_ZMK_DIR/app"
 echo 2
 echo "Building for boards: $BOARDS , shields: $SHIELDS"
