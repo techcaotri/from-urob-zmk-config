@@ -203,6 +203,7 @@ compile_board () {
 }
 
 echo 1
+echo $SHELL
 cd "$HOST_ZMK_DIR/app"
 echo 2
 echo "Building for boards: $BOARDS , shields: $SHIELDS"
