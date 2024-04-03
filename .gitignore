@@ -4,3 +4,7 @@
 modules
 zephyr/
 zmk/
+adv360pro_keymap.yaml
+adv360_keymap.svg
+adv360_keymap.yaml
+adv360pro_keymap.svg
