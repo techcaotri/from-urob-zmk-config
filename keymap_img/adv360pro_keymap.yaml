@@ -1,5 +1,3 @@
-layout:
-  qmk_keyboard: adv360
 layers:
   base:
   - - t: '='
@@ -26,7 +24,8 @@ layers:
     - T
   - - t: '&num_dance'
       h: num
-    - nav
+    - t: nav
+      h: toggle
     - Y
     - U
     - I
@@ -42,7 +41,8 @@ layers:
       h: "\u2387"
     - F
     - G
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - H
     - J
@@ -72,13 +72,11 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - mouse
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -118,20 +116,21 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - "\u21E7\u21B9"
+    - "Sft+ \u21B9"
     - "\u2387\u21B9"
     - t: "\u25BD"
       type: trans
   - - t: '&num_dance'
       h: num
-    - nav
+    - t: nav
+      h: toggle
     - "\u21DE"
     - t: "\u232B"
-      h: "^\u232B"
+      h: "Ctl+ \u232B"
     - t: "\u2191"
-      h: "^\u21E4"
+      h: "Ctl+ \u21E4"
     - t: "\u2421"
-      h: "^\u2421"
+      h: "Ctl+ \u2421"
     - t: "\u25BD"
       type: trans
     - \
@@ -146,13 +145,14 @@ layers:
       h: sticky
     - t: "\u25BD"
       type: trans
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - "\u21DF"
     - t: "\u2190"
       h: "\u21E4"
     - t: "\u2193"
-      h: "^\u21E5"
+      h: "Ctl+ \u21E5"
     - t: "\u2192"
       h: "\u21E5"
   - - RET
@@ -179,13 +179,11 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - mouse
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -229,7 +227,8 @@ layers:
     - PSCRN
   - - t: '&num_dance'
       h: num
-    - nav
+    - t: nav
+      h: toggle
     - "\u21DE"
     - "\u21E4"
     - "\u2191"
@@ -246,7 +245,8 @@ layers:
       h: "\u2387"
     - F6
     - SLCK
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - "\u21DF"
     - "\u2190"
@@ -275,13 +275,11 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - mouse
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -329,7 +327,8 @@ layers:
   - - t: '&num_dance'
       h: num
       type: held
-    - nav
+    - t: nav
+      h: toggle
     - ^
     - '&'
     - '*'
@@ -348,7 +347,8 @@ layers:
     - t: '6'
       h: "\u2318"
     - $
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - t: "\u25BD"
       type: trans
@@ -382,13 +382,11 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - mouse
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -428,15 +426,20 @@ layers:
     - t: '-'
       s: _
     - "\u21B9"
-    - BT 0
-    - BT 1
-    - BT 2
-    - BT 3
+    - t: BT
+      h: '0'
+    - t: BT
+      h: '1'
+    - t: BT
+      h: '2'
+    - t: BT
+      h: '3'
     - BT CLR
   - - t: '&num_dance'
       h: num
       type: held
-    - nav
+    - t: nav
+      h: toggle
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -458,7 +461,8 @@ layers:
     - t: "\u25BD"
       type: trans
     - bootloader
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - bootloader
     - t: "\u25BD"
@@ -496,13 +500,11 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - mouse
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -554,7 +556,8 @@ layers:
       type: trans
   - - t: '&num_dance'
       h: num
-    - nav
+    - t: nav
+      h: toggle
     - t: "\u25BD"
       type: trans
     - "\U0001F5B1S\u2191"
@@ -574,7 +577,8 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - num
+    - t: num
+      h: toggle
     - "\U0001F4A1\U0001F5B1"
     - "\U0001F5B1S\u2190"
     - "\U0001F5B1\u2190"
@@ -608,13 +612,12 @@ layers:
     - t: '`'
       s: '~'
     - CAPS
-    - t: "\u2190"
-      h: "\u2318"
-    - t: "\u2192"
-      h: fn
+    - t: mouse
+      type: held
+    - fn
     - t: '&num_dance'
       h: num
-  - - "\u2193"
+  - - "\u2318"
     - t: '['
       s: '{'
     - t: ']'
@@ -722,7 +725,7 @@ combos:
   - 38
   k:
     t: (
-    h: "\u21E7\u2303"
+    h: "Sft+ \u2303"
     s: <
   l:
   - base
@@ -732,7 +735,7 @@ combos:
   - 39
   k:
     t: )
-    h: "\u2387\u2303"
+    h: "Alt+ \u2303"
     s: '>'
   l:
   - base
