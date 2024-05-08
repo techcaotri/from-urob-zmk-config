@@ -22,8 +22,7 @@ layers:
     - E
     - R
     - T
-  - - t: '&num_dance'
-      h: num
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - Y
@@ -74,8 +73,7 @@ layers:
     - CAPS
     - mouse
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
@@ -120,8 +118,7 @@ layers:
     - "\u2387\u21B9"
     - t: "\u25BD"
       type: trans
-  - - t: '&num_dance'
-      h: num
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - "\u21DE"
@@ -181,8 +178,7 @@ layers:
     - CAPS
     - mouse
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
@@ -225,8 +221,7 @@ layers:
     - F8
     - F9
     - PSCRN
-  - - t: '&num_dance'
-      h: num
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - "\u21DE"
@@ -277,8 +272,7 @@ layers:
     - CAPS
     - mouse
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
@@ -324,9 +318,7 @@ layers:
     - '8'
     - '9'
     - '%'
-  - - t: '&num_dance'
-      h: num
-      type: held
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - ^
@@ -384,8 +376,7 @@ layers:
     - CAPS
     - mouse
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
@@ -435,9 +426,7 @@ layers:
     - t: BT
       h: '3'
     - BT CLR
-  - - t: '&num_dance'
-      h: num
-      type: held
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - t: "\u25BD"
@@ -460,11 +449,13 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - bootloader
+    - t: $$mdi:memory-arrow-down$$
+      type: boot_loader
     - t: num
       h: toggle
     - "\U0001F4A1\U0001F5B1"
-    - bootloader
+    - t: $$mdi:memory-arrow-down$$
+      type: boot_loader
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -502,8 +493,7 @@ layers:
     - CAPS
     - mouse
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
@@ -554,8 +544,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - t: '&num_dance'
-      h: num
+  - - "\U0001F4A1\U0001F522"
     - t: nav
       h: toggle
     - t: "\u25BD"
@@ -615,8 +604,7 @@ layers:
     - t: mouse
       type: held
     - fn
-    - t: '&num_dance'
-      h: num
+    - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
       s: '{'
