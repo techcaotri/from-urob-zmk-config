@@ -17,7 +17,7 @@
 #define X_LB    &kp LSHFT
 #define X_RB    &kp RSHFT
 
-#define X_LH    &mo FN  &kp GRAVE &kp CAPS  &hml LGUI LEFT &hml_fn FN RIGHT     SMART_NUM &kp DOWN &kp LBKT &kp RBKT &mo FN  \
+#define X_LH    &mo FN  &kp GRAVE &kp CAPS  &mo MOUSE &mo FN     SMART_NUM &kp LGUI &kp LBKT &kp RBKT &mo FN  \
                 &kp LCTRL &kp LALT      &kp LGUI  &kp RCTRL
 #define X_MH    &kp HOME    &kp PG_UP
 #define X_RH    &kp END     &kp PG_DN
