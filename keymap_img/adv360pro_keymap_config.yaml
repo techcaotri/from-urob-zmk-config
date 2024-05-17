@@ -166,6 +166,11 @@ draw_config:
         fill: #fdd;
     }
 
+    /* color accent for layer-activated keys */
+    rect.layer {
+        fill: #f99;
+    }
+
     /* color accent for ghost (optional) keys */
     rect.ghost, rect.combo.ghost {
         fill: #ddd;
@@ -222,20 +227,25 @@ draw_config:
 
     /* thumb keys */
     .keypos-6, .keypos-7, .keypos-20, .keypos-21, .keypos-34, .keypos-35, .keypos-57, .keypos-58, .keypos-59 {
-        --color--key--bg: var(--color--material--red--100);
-        --color--key--border: var(--color--material--red--50);
+        --color--key--bg: var(--color--material--blue-gray--100);
+        --color--key--border: var(--color--material--blue-gray--50);
     }
-    .keypos-60 {
-        --color--key--bg: var(--color--material--blue--400);
-        --color--key--border: var(--color--material--blue--100);
+    .keypos-60, .keypos-66 {
+        --color--key--bg: var(--color--material--blue--100);
+        --color--key--border: var(--color--material--blue--50);
     }
 
     /* Overrides */
     .boot_loader {
-        --color--key--bg: var(--color--material--teal--900);
-        --color--layer--text: var(--color--material--red--900)
+        --color--key--bg: var(--color--material--yellow--400);
+        --color--layer--text: var(--color--material--blue--900)
         font-weight: bold;
         stroke-width: 2;
+    }
+    .bt_key {
+        --color--key--bg: var(--color--material--yellow--100);
+        --color--layer--text: var(--color--material--blue--900)
+        font-weight: bold;
     }
 
 parse_config:
@@ -363,6 +373,41 @@ parse_config:
     '&win_sleep': "WinSleep"
     '&comma_morph': ",<;"
     '&dot_morph': ".>"
+    '&tog NAV': "✥🔒"
+    '&tog NUM': "🔢🔒"
+    '&kp LS(TAB)': '⇧↹'
+    '&mo MOUSE': '🖱'
+    '&kp K_CANCEL': '␘'
+    '&mt LC(BSPC) BSPC': "⌫\n⌃⌫"
+    '&mt LC(HOME) UP': "↑\n⌃⇤"
+    '&mt LC(END) DOWN': "↓\n⌃⇥"
+    '&mt LC(DEL) DEL': "␡\n⌃␡"
+
+    '&bt BT_CLR':
+      tap: $$mdi:bluetooth$$
+      shifted: $$mdi:close-thick$$
+      type: bt_key
+
+    '&bt BT_SEL 0':
+      tap: $$mdi:bluetooth-connect$$
+      shifted: '0'
+      type: bt_key
+
+    '&bt BT_SEL 1':
+      tap: $$mdi:bluetooth-connect$$
+      shifted: '1'
+      type: bt_key
+
+    '&bt BT_SEL 2':
+      tap: $$mdi:bluetooth-connect$$
+      shifted: '2'
+      type: bt_key
+
+    '&bt BT_SEL 3':
+      tap: $$mdi:bluetooth-connect$$
+      shifted: '3'
+      type: bt_key
+
     SMART_NUM: "💡🔢"
   skip_binding_parsing: false
   zmk_keycode_map:
@@ -442,19 +487,25 @@ parse_config:
     RALT: ⎇
     RGUI: ⌘
     RSHFT: ⇧
+    CAPS: ⇬
     RIGHT_CONTROL: ⌃
     RIGHT_ALT: ⎇
     RIGHT_GUI: ⌘
     RIGHT_SHFT: ⇧
+    SPACE: ␣
     LEFT: ←
     RIGHT: →
     UP: ↑
     DOWN: ↓
     TAB: ↹
     RETURN: '⏎'
+    RET: '⏎'
     ESCAPE: '⎋'
+    ESC: '⎋'
     BSPC: '⌫'
+    BKSP: '⌫'
     DEL: '␡'
+    INS: '⎀'
     HOME: '⇤'
     END: '⇥'
     PG_UP: '⇞'
@@ -506,3 +557,5 @@ parse_config:
     combo_paste: {'k': "⇧⎀/⎘"}
     combo_lbkt: {'k':"[{"}
     combo_rbkt: {'k':"]}"}
+    combo_lpar: {'k': "(<\n⇧⌃"}
+    combo_rpar: {'k': ")>\n⎇⌃"}

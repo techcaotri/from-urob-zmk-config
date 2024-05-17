@@ -23,15 +23,14 @@ layers:
     - R
     - T
   - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+    - "\u2725\U0001F512"
     - Y
     - U
     - I
     - O
     - P
     - \
-    - ESC
+    - "\u238B"
     - t: A
       h: "\u21E7"
   - - t: S
@@ -40,8 +39,7 @@ layers:
       h: "\u2387"
     - F
     - G
-    - t: num
-      h: toggle
+    - "\U0001F522\U0001F512"
     - "\U0001F4A1\U0001F5B1"
     - H
     - J
@@ -70,8 +68,8 @@ layers:
     - fn
     - t: '`'
       s: '~'
-    - CAPS
-    - mouse
+    - "\u21EC"
+    - "\U0001F5B1"
     - fn
     - "\U0001F4A1\U0001F522"
   - - "\u2318"
@@ -84,12 +82,12 @@ layers:
     - "\u2387"
     - "\u2318"
     - "\u2303"
-    - SPACE
+    - "\u2423"
     - "\u2421"
   - - "\u21E4"
     - "\u21DE"
-    - BKSP
-    - RET
+    - "\u232B"
+    - "\u23CE"
     - "\u21E5"
     - "\u21DF"
   nav:
@@ -100,8 +98,10 @@ layers:
     - '3'
     - '4'
     - '5'
-    - "\U0001F4A1\u2725"
-    - "\U0001F4A1\u2725"
+    - t: "\U0001F4A1\u2725"
+      type: held
+    - t: "\U0001F4A1\u2725"
+      type: held
     - '6'
     - '7'
   - - '8'
@@ -114,24 +114,21 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - "Sft+ \u21B9"
+    - "\u21E7\u21B9"
     - "\u2387\u21B9"
     - t: "\u25BD"
       type: trans
   - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+    - t: "\u2725\U0001F512"
+      type: held
     - "\u21DE"
-    - t: "\u232B"
-      h: "Ctl+ \u232B"
-    - t: "\u2191"
-      h: "Ctl+ \u21E4"
-    - t: "\u2421"
-      h: "Ctl+ \u2421"
+    - "\u232B\n\u2303\u232B"
+    - "\u2191\n\u2303\u21E4"
+    - "\u2421\n\u2303\u2421"
     - t: "\u25BD"
       type: trans
     - \
-    - ESC
+    - "\u238B"
     - t: "\u21E7"
       h: sticky
   - - t: "\u2303"
@@ -142,17 +139,15 @@ layers:
       h: sticky
     - t: "\u25BD"
       type: trans
-    - t: num
-      h: toggle
+    - "\U0001F522\U0001F512"
     - "\U0001F4A1\U0001F5B1"
     - "\u21DF"
     - t: "\u2190"
       h: "\u21E4"
-    - t: "\u2193"
-      h: "Ctl+ \u21E5"
+    - "\u2193\n\u2303\u21E5"
     - t: "\u2192"
       h: "\u21E5"
-  - - RET
+  - - "\u23CE"
     - ''''
     - "\u21E7"
     - t: "\u25BD"
@@ -165,7 +160,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - INS
+    - "\u2380"
     - "\u21B9"
   - - <
     - '>'
@@ -175,8 +170,8 @@ layers:
     - fn
     - t: '`'
       s: '~'
-    - CAPS
-    - mouse
+    - "\u21EC"
+    - "\U0001F5B1"
     - fn
     - "\U0001F4A1\U0001F522"
   - - "\u2318"
@@ -189,7 +184,7 @@ layers:
     - "\u2387"
     - "\u2318"
     - "\u2303"
-    - CANCEL
+    - "\u2418"
     - t: "\u25BD"
       type: trans
   - - "\u21E4"
@@ -222,8 +217,7 @@ layers:
     - F9
     - PSCRN
   - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+    - "\u2725\U0001F512"
     - "\u21DE"
     - "\u21E4"
     - "\u2191"
@@ -231,7 +225,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - \
-    - ESC
+    - "\u238B"
     - t: F11
       h: "\u21E7"
   - - t: F4
@@ -240,8 +234,7 @@ layers:
       h: "\u2387"
     - F6
     - SLCK
-    - t: num
-      h: toggle
+    - "\U0001F522\U0001F512"
     - "\U0001F4A1\U0001F5B1"
     - "\u21DF"
     - "\u2190"
@@ -256,7 +249,7 @@ layers:
     - F2
     - F3
     - PAUSE BREAK
-    - INS
+    - "\u2380"
     - "\u2421"
   - - t: "\u25BD"
       type: trans
@@ -269,9 +262,10 @@ layers:
       type: held
     - t: '`'
       s: '~'
-    - CAPS
-    - mouse
-    - fn
+    - "\u21EC"
+    - "\U0001F5B1"
+    - t: fn
+      type: held
     - "\U0001F4A1\U0001F522"
   - - "\u2318"
     - t: '['
@@ -318,9 +312,9 @@ layers:
     - '8'
     - '9'
     - '%'
-  - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+  - - t: "\U0001F4A1\U0001F522"
+      type: held
+    - "\u2725\U0001F512"
     - ^
     - '&'
     - '*'
@@ -329,7 +323,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - \
-    - ESC
+    - "\u238B"
     - t: '0'
       h: "\u21E7"
   - - t: '4'
@@ -339,8 +333,8 @@ layers:
     - t: '6'
       h: "\u2318"
     - $
-    - t: num
-      h: toggle
+    - t: "\U0001F522\U0001F512"
+      type: held
     - "\U0001F4A1\U0001F5B1"
     - t: "\u25BD"
       type: trans
@@ -373,10 +367,11 @@ layers:
     - fn
     - t: '`'
       s: '~'
-    - CAPS
-    - mouse
+    - "\u21EC"
+    - "\U0001F5B1"
     - fn
-    - "\U0001F4A1\U0001F522"
+    - t: "\U0001F4A1\U0001F522"
+      type: held
   - - "\u2318"
     - t: '['
       s: '{'
@@ -407,7 +402,8 @@ layers:
     - '3'
     - '4'
     - '5'
-    - "\U0001F4A1\u2725"
+    - t: "\U0001F4A1\u2725"
+      type: layer
     - "\U0001F4A1\u2725"
     - '6'
     - '7'
@@ -417,18 +413,23 @@ layers:
     - t: '-'
       s: _
     - "\u21B9"
-    - t: BT
-      h: '0'
-    - t: BT
-      h: '1'
-    - t: BT
-      h: '2'
-    - t: BT
-      h: '3'
-    - BT CLR
+    - t: $$mdi:bluetooth-connect$$
+      s: '0'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '1'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '2'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '3'
+      type: bt_key
+    - t: $$mdi:bluetooth$$
+      s: $$mdi:close-thick$$
+      type: bt_key
   - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+    - "\u2725\U0001F512"
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -440,7 +441,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - \
-    - ESC
+    - "\u238B"
     - t: "\u25BD"
       type: trans
   - - t: "\u25BD"
@@ -451,8 +452,8 @@ layers:
       type: trans
     - t: $$mdi:memory-arrow-down$$
       type: boot_loader
-    - t: num
-      h: toggle
+    - t: "\U0001F522\U0001F512"
+      type: layer
     - "\U0001F4A1\U0001F5B1"
     - t: $$mdi:memory-arrow-down$$
       type: boot_loader
@@ -490,8 +491,8 @@ layers:
     - fn
     - t: '`'
       s: '~'
-    - CAPS
-    - mouse
+    - "\u21EC"
+    - "\U0001F5B1"
     - fn
     - "\U0001F4A1\U0001F522"
   - - "\u2318"
@@ -545,8 +546,7 @@ layers:
     - t: "\u25BD"
       type: trans
   - - "\U0001F4A1\U0001F522"
-    - t: nav
-      h: toggle
+    - "\u2725\U0001F512"
     - t: "\u25BD"
       type: trans
     - "\U0001F5B1S\u2191"
@@ -555,7 +555,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - \
-    - ESC
+    - "\u238B"
     - t: "\u25BD"
       type: trans
   - - t: "\u25BD"
@@ -566,9 +566,9 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - t: num
-      h: toggle
-    - "\U0001F4A1\U0001F5B1"
+    - "\U0001F522\U0001F512"
+    - t: "\U0001F4A1\U0001F5B1"
+      type: held
     - "\U0001F5B1S\u2190"
     - "\U0001F5B1\u2190"
     - "\U0001F5B1\u2193"
@@ -600,8 +600,8 @@ layers:
     - fn
     - t: '`'
       s: '~'
-    - CAPS
-    - t: mouse
+    - "\u21EC"
+    - t: "\U0001F5B1"
       type: held
     - fn
     - "\U0001F4A1\U0001F522"
@@ -629,7 +629,7 @@ combos:
 - p:
   - 16
   - 17
-  k: ESC
+  k: "\u238B"
   l:
   - base
   - nav
@@ -711,20 +711,14 @@ combos:
 - p:
   - 37
   - 38
-  k:
-    t: (
-    h: "Sft+ \u2303"
-    s: <
+  k: "(<\n\u21E7\u2303"
   l:
   - base
   - num
 - p:
   - 38
   - 39
-  k:
-    t: )
-    h: "Alt+ \u2303"
-    s: '>'
+  k: ")>\n\u2387\u2303"
   l:
   - base
   - num

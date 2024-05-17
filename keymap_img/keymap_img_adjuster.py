@@ -17,6 +17,18 @@ pressed_buttons = [
     # ('Func', 32),
     # ('Func', 36),
     # ('Adjust', 33),
+    ('nav', 7),
+    ('nav', 8),
+    ('nav', 22),
+    ('fn', 59),
+    ('num', 21),
+    ('num', 35),
+    ('num', 60),
+    ('num', 60),
+    ('mouse', 36),
+    ('mouse', 58),
+    ('sys', 7),
+    ('sys', 35),
 ]
 
 delete_layers = [
@@ -108,10 +120,16 @@ def highlight_buttons(keymap, buttons):
         if type(button_item) is dict:
             button_item['type'] = 'held'
         else:
-            button_dict = {
-                't': button_item,
-                'type': 'held',
-            }
+            if b_layer == 'sys':
+                button_dict = {
+                    't': button_item,
+                    'type': 'layer',
+                }
+            else:
+                button_dict = {
+                    't': button_item,
+                    'type': 'held',
+                }
             b_row[b_index] = button_dict
 
     return keymap
