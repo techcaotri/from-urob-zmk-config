@@ -366,8 +366,8 @@ parse_config:
     '&mwh SCROLL_HOR(100)': "🖱S→"
     '&mwh SCROLL_HOR(-100)': "🖱S←"
     '&smart_mouse': "💡🖱"
-    '&mkp MB1': "🖱C←"
-    '&mkp MB2': "🖱C→"
+    '&mkp MB1': {t: $$mdi:mouse-left-click$$}
+    '&mkp MB2': {t: $$mdi:mouse-right-click$$}
     '&swapper': "⎇↹"
     '&smart_nav': "💡✥"
     '&win_sleep': "WinSleep"

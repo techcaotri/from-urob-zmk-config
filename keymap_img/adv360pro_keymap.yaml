@@ -621,8 +621,8 @@ layers:
       type: trans
   - - "\u21E4"
     - "\u21DE"
-    - "\U0001F5B1C\u2192"
-    - "\U0001F5B1C\u2190"
+    - $$mdi:mouse-left-click$$
+    - $$mdi:mouse-right-click$$
     - "\u21E5"
     - "\u21DF"
 combos:
