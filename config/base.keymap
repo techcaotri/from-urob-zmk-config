@@ -7,7 +7,7 @@
     #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
-#include "../zmk-nodefree-config/helper.h"
+#include "zmk-helpers/helper.h"
 
 #define DEF 0
 #define NAV 1
@@ -54,7 +54,7 @@
         flavor = "balanced"; \
         tapping-term-ms = <280>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        global-quick-tap-ms = <150>; \
+        require-prior-idle-ms = <150>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
@@ -91,7 +91,7 @@ ZMK_BEHAVIOR(mt_end,  hold_tap,  bindings = <&masked_end>, <&kp>; MT_CORE)
 
 // mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
 #define MASK_MODS(NAME, MODS, BINDING) \
-    ZMK_BEHAVIOR(NAME, mod_morph, \
+    ZMK_MOD_MORPH(NAME, \
         bindings = <BINDING>, <BINDING>; \
         mods = <MODS>; \
     )
@@ -101,7 +101,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 /* Caps-word, num-word and smart-mouse */
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
-ZMK_BEHAVIOR(smart_shft, mod_morph,
+ZMK_MOD_MORPH(smart_shft,
     bindings = <&sk LSHFT>, <&caps_word>;
     mods = <(MOD_LSFT)>;
 )
@@ -111,13 +111,13 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 #define SMART_NUM &smart_num NUM 0
-ZMK_BEHAVIOR(smart_num, hold_tap,
+ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <120>;
     bindings = <&mo>, <&num_dance>;
 )
-ZMK_BEHAVIOR(num_dance, tap_dance,
+ZMK_TAP_DANCE(num_dance,
     tapping-term-ms = <120>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
@@ -127,27 +127,26 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 };
 
 // smart-mouse, requires PR #1366
-ZMK_BEHAVIOR(smart_mouse, tri_state,
+ZMK_TRI_STATE(smart_mouse,
     bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions = <LT1 LT3 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RH0 RH1>;
     ignored-layers = <MOUSE>;
 )
 
-// smart-navigation, requires PR #1366
-// press ESC(LM5), navigation dedicated key of adv360 or smart_nav again to exit
-ZMK_BEHAVIOR(smart_nav, tri_state,
-    bindings = <&tog NAV>, <&none>, <&tog NAV>;
-    ignored-key-positions = <LN5 LN4 LN3 LN2 LN1 LN0 RN0 RN1 RN2 RN3 RN4 RN5 LT5 LB5 LT1 LT2 LM1 LM2 LM3 LM4 RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RT5 RM5 RB5 THUMBS 55 56 61 62>;
-    ignored-layers = <NAV>;
-)
-
 /* Custom behaviors */
 
 // Alt+Tab swapper, requires PR #1366
-ZMK_BEHAVIOR(swapper, tri_state,
+ZMK_TRI_STATE(swapper,
     bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
     ignored-key-positions = <LT2>;
 )
+
+// reuse basic mod-morph scheme
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
+    ZMK_MOD_MORPH(NAME, \
+        mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
+        bindings = <BINDING1>, <BINDING2>; \
+    )
 
 // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
 ZMK_BEHAVIOR(comma_morph, mod_morph,
@@ -159,21 +158,20 @@ ZMK_BEHAVIOR(comma_inner_morph, mod_morph,
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
+// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+
 // tap: dot | shift + tap: colon | ctrl + shift + tap: >
-ZMK_BEHAVIOR(dot_morph, mod_morph,
-    bindings = <&kp DOT>, <&dot_inner_morph>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
-    bindings = <&kp COLON>, <&kp GREATER_THAN>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
-)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 // tap: qmark | shift + tap: excl
-ZMK_BEHAVIOR(qexcl, mod_morph,
-    bindings = <&kp QMARK>, <&kp EXCL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
+SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
+
+// tap: left/right parenthesis | shft + tap: less-than/greater-than
+SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
+SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
@@ -186,39 +184,39 @@ ZMK_BEHAVIOR(spc_morph, mod_morph,
     bindings = <&kp SPACE>, <&dot_spc>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
-ZMK_BEHAVIOR(dot_spc, macro,
+ZMK_MACRO(dot_spc,
     wait-ms = <0>;
     tap-ms = <5>;
     bindings = <&kp DOT &kp SPACE &sk LSHFT>;
 )
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
-ZMK_BEHAVIOR(bs_del, mod_morph,
+ZMK_MOD_MORPH(bs_del,
     bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_RSFT>;
 )
 
 // tap: left-parenthesis | shft + tap: less-than
-ZMK_BEHAVIOR(lpar_lt, mod_morph,
+ZMK_MOD_MORPH(lpar_lt,
     bindings = <&kp LPAR>, <&kp LT>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // tap: right-parenthesis | shft + tap: greater-than
-ZMK_BEHAVIOR(rpar_gt, mod_morph,
+ZMK_MOD_MORPH(rpar_gt,
     bindings = <&kp RPAR>, <&kp GT>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // tap: copy | double-tap: cut
-ZMK_BEHAVIOR(copy_cut, tap_dance,
+ZMK_TAP_DANCE(copy_cut,
     tapping-term-ms = <200>;
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
 // Windows sleep key
-ZMK_BEHAVIOR(win_sleep, macro,
+ZMK_MACRO(win_sleep,
     wait-ms = <500>;
     tap-ms = <50>;
     bindings = <&kp LG(X) &kp U &kp S>;
@@ -226,9 +224,12 @@ ZMK_BEHAVIOR(win_sleep, macro,
 
 // misc aliases
 #define CANCEL      &kp K_CANCEL             // cancel caps-word, num-word and smart-mouse
-#define DSK_PREV    &hmr LCTRL LG(LC(LEFT))  // previous desktop
-#define DSK_NEXT    &hmr RSHFT LG(LC(RIGHT))  // next     desktop
-#define VOL_DOWN    &hmr LALT C_VOL_DN
+#define DSK_PREV    &hmr LCTRL LG(LC(LEFT))   // previous desktop
+#define DSK_NEXT    &hmr LALT LG(LC(RIGHT)) // next     desktop
+#define PIN_WIN     &kp LG(LC(LS(Q)))        // pin window across desktops
+#define PIN_APP     &kp LG(LC(LS(A)))        // pin application across desktops
+#define DSK_MGR     &kp LA(GRAVE)            // desktop manager
+#define VOL_DOWN    &hmr RSHFT C_VOL_DN
 
 /* Keymap */
 
@@ -260,7 +261,7 @@ ZMK_LAYER(nav,
 
 ZMK_LAYER(fn,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-    X_LT_FN &kp F12        &kp F7        &kp F8        &kp F9       &kp PSCRN        X_MT     &kp PG_UP     &kp HOME      &kp UP        &kp END       ___             X_RT
+    X_LT    &kp F12        &kp F7        &kp F8        &kp F9       &kp PSCRN        X_MT     &kp PG_UP     &kp HOME      &kp UP        &kp END       ___             X_RT
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LM    &hml LSHFT F11 &hml LCTRL F4 &hml LALT F5  &kp F6       &kp SLCK         X_MM     &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT     ___             X_RM
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -302,7 +303,7 @@ ZMK_LAYER(mouse,
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     X_LB     ___           ___           ___           ___           ___             X_MB     ___           ___           ___            ___          ___             X_RB
 //├──────┤ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├──────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
-    X_LH                                               ___           ___             X_MH     U_BTN1        U_BTN2                                                    X_RH
+    X_LH                                               ___           ___             X_MH     &mkp LCLK     &mkp RCLK                                                    X_RH
 //╰──────╯                                           ╰─────────────┴─────────────╯ ╰──────╯ ╰─────────────┴─────────────╯                                           ╰──────╯
 )
 

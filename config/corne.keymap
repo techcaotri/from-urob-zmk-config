@@ -2,6 +2,7 @@
 #include "zmk-helpers/key-labels/42.h"
 
 /* map Corne's extra keys */
+#define X_LT    &kp TAB
 #define X_RT    &kp BSLH
 
 #define X_LM    &kp ESC
