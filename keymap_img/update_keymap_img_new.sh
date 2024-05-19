@@ -9,3 +9,5 @@ echo 'Adjusting keymap yaml...'
 
 echo 'Drawing keymap...'
 keymap -c adv360pro_keymap_config.yaml draw --select-layers base nav fn num sys mouse  -k adv360pro_urob adv360pro_keymap.yaml > adv360pro_keymap.svg
+keymap -c adv360pro_keymap_config.yaml draw --keys-only --select-layers base nav fn num sys mouse  -k adv360pro_urob adv360pro_keymap.yaml > adv360pro_keymap_keys.svg
+keymap -c adv360pro_keymap_config.yaml draw --combos-only --select-layers base nav fn num sys mouse  -k adv360pro_urob adv360pro_keymap.yaml > adv360pro_keymap_combos.svg
