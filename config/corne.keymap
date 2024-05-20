@@ -11,7 +11,7 @@
 #define X_LB    &kp LSHFT
 #define X_RB    &kp RSHFT
 
-#define X_LH    &mo MOUSE  &mo FN  &kp SPACE    &kp RET SMART_NUM &kp LGUI 
+#define X_MH    &kp SPACE  &kp RET 
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
