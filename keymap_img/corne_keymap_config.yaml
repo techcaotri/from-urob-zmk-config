@@ -226,11 +226,11 @@ draw_config:
     }
 
     /* thumb keys */
-    .keypos-6, .keypos-7, .keypos-20, .keypos-21, .keypos-34, .keypos-35, .keypos-57, .keypos-58, .keypos-59 {
+    .keypos-36, .keypos-37, .keypos-40 {
         --color--key--bg: var(--color--material--blue-gray--100);
         --color--key--border: var(--color--material--blue-gray--50);
     }
-    .keypos-60, .keypos-66 {
+    .keypos-41 {
         --color--key--bg: var(--color--material--blue--100);
         --color--key--border: var(--color--material--blue--50);
     }
@@ -365,9 +365,19 @@ parse_config:
     '&mwh SCROLL_VERT(-100)': "🖱S↓"
     '&mwh SCROLL_HOR(100)': "🖱S→"
     '&mwh SCROLL_HOR(-100)': "🖱S←"
+    '&mmv MOVE_RIGHT': "🖱→"
+    '&mmv MOVE_LEFT': "🖱←"
+    '&mmv MOVE_UP': "🖱↑"
+    '&mmv MOVE_DOWN': "🖱↓"
+    '&msc SCRL_UP': "🖱S↑"
+    '&msc SCRL_DOWN': "🖱S↓"
+    '&msc SCRL_RIGHT': "🖱S→"
+    '&msc SCRL_LEFT': "🖱S←"
     '&smart_mouse': "💡🖱"
     '&mkp MB1': {t: $$mdi:mouse-left-click$$}
     '&mkp MB2': {t: $$mdi:mouse-right-click$$}
+    '&mkp LCLK': {t: $$mdi:mouse-left-click$$}
+    '&mkp RCLK': {t: $$mdi:mouse-right-click$$}
     '&swapper': "⎇↹"
     '&smart_nav': "💡✥"
     '&win_sleep': "WinSleep"

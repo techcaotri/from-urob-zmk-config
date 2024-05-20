@@ -1,0 +1,633 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  base:
+  - - "\u21B9"
+    - Q
+    - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+  - - P
+    - \
+    - "\u238B"
+    - t: A
+      h: "\u21E7"
+    - t: S
+      h: "\u2303"
+    - t: D
+      h: "\u2387"
+    - F
+    - G
+    - H
+    - J
+  - - t: K
+      h: "\u2387"
+    - t: L
+      h: "\u2303"
+    - t: ';:'
+      h: "\u21E7"
+    - ''''
+    - "\u21E7"
+    - Z
+    - X
+    - C
+    - V
+    - B
+  - - N
+    - M
+    - t: ','
+      h: <
+    - t: .
+      h: '>'
+    - t: /
+      s: '?'
+    - "\u21E7"
+    - "\U0001F5B1"
+    - fn
+    - "\u2423"
+    - "\u23CE"
+  - - "\U0001F4A1\U0001F522"
+    - "\u2318"
+  nav:
+  - - "\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7\u21B9"
+    - "\u2387\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - "\u21DE"
+    - "\u232B\n\u2303\u232B"
+    - "\u2191\n\u2303\u21E4"
+    - "\u2421\n\u2303\u2421"
+  - - t: "\u25BD"
+      type: trans
+    - \
+    - "\u238B"
+    - t: "\u21E7"
+      h: sticky
+    - t: "\u2303"
+      h: sticky
+    - t: "\u2387"
+      h: sticky
+    - t: "\u2318"
+      h: sticky
+    - t: "\u25BD"
+      type: trans
+    - "\u21DF"
+    - t: "\u2190"
+      h: "\u21E4"
+  - - "\u2193\n\u2303\u21E5"
+    - t: "\u2192"
+      h: "\u21E5"
+    - "\u23CE"
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - "\u2380"
+    - "\u21B9"
+    - <
+    - '>'
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u2423"
+    - "\u23CE"
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  fn:
+  - - "\u21B9"
+    - F12
+    - F7
+    - F8
+    - F9
+    - PSCRN
+    - "\u21DE"
+    - "\u21E4"
+    - "\u2191"
+    - "\u21E5"
+  - - t: "\u25BD"
+      type: trans
+    - \
+    - "\u238B"
+    - t: F11
+      h: "\u21E7"
+    - t: F4
+      h: "\u2303"
+    - t: F5
+      h: "\u2387"
+    - F6
+    - SLCK
+    - "\u21DF"
+    - "\u2190"
+  - - "\u2193"
+    - "\u2192"
+    - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - F10
+    - F1
+    - F2
+    - F3
+    - PAUSE BREAK
+  - - "\u2380"
+    - "\u2421"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - type: held
+    - "\u2423"
+    - "\u23CE"
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  num:
+  - - "\u21B9"
+    - '!'
+    - '7'
+    - '8'
+    - '9'
+    - '%'
+    - ^
+    - '&'
+    - '*'
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - \
+    - "\u238B"
+    - t: '0'
+      h: "\u21E7"
+    - t: '4'
+      h: "\u2303"
+    - t: '5'
+      h: "\u2387"
+    - t: '6'
+      h: "\u2318"
+    - $
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - '@'
+    - '1'
+    - '2'
+    - '3'
+    - '#'
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u2423"
+    - "\u23CE"
+  - - t: "\u25BD"
+      type: held
+    - t: "\u25BD"
+      type: trans
+  sys:
+  - - "\u21B9"
+    - t: $$mdi:bluetooth-connect$$
+      s: '0'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '1'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '2'
+      type: bt_key
+    - t: $$mdi:bluetooth-connect$$
+      s: '3'
+      type: bt_key
+    - t: $$mdi:bluetooth$$
+      s: $$mdi:close-thick$$
+      type: bt_key
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - \
+    - "\u238B"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: $$mdi:memory-arrow-down$$
+      type: boot_loader
+    - t: $$mdi:memory-arrow-down$$
+      type: boot_loader
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - t: "\u25BD"
+      type: held
+    - t: "\u25BD"
+      type: held
+    - "\u2423"
+    - "\u23CE"
+  - - t: "\u25BD"
+      type: held
+    - t: "\u25BD"
+      type: held
+  mouse:
+  - - "\u21B9"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\U0001F5B1S\u2191"
+    - "\U0001F5B1\u2191"
+    - "\U0001F5B1S\u2193"
+  - - t: "\u25BD"
+      type: trans
+    - \
+    - "\u238B"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\U0001F5B1S\u2190"
+    - "\U0001F5B1\u2190"
+  - - "\U0001F5B1\u2193"
+    - "\U0001F5B1\u2192"
+    - "\U0001F5B1S\u2192"
+    - ''''
+    - "\u21E7"
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - "\u21E7"
+    - t: "\u25BD"
+      type: held
+    - t: "\u25BD"
+      type: trans
+    - "\u2423"
+    - "\u23CE"
+  - - $$mdi:mouse-left-click$$
+    - $$mdi:mouse-right-click$$
+combos:
+- p:
+  - 2
+  - 4
+  k: "\U0001F4A1\U0001F5B1"
+  l:
+  - base
+  - nav
+  - num
+  a: top
+  o: 0.25
+- p:
+  - 14
+  - 15
+  k: TAB
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 15
+  - 16
+  k: "KRP\n\u21E7\u2303"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 26
+  - 28
+  k: "^X/\u2704"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 26
+  - 27
+  k: "^\u2380/\u29C9"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 27
+  - 28
+  k: "\u21E7\u2380/\u2398"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 7
+  - 8
+  k: "\u232B"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 8
+  - 9
+  k: "\u2421"
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 19
+  - 20
+  k: "(<\n\u21E7\u2303"
+  l:
+  - base
+  - num
+- p:
+  - 20
+  - 21
+  k: ")>\n\u2387\u2303"
+  l:
+  - base
+  - num
+- p:
+  - 19
+  - 20
+  k: <
+  l:
+  - nav
+- p:
+  - 20
+  - 21
+  k: '>'
+  l:
+  - nav
+- p:
+  - 31
+  - 32
+  k: '[{'
+  l:
+  - base
+  - num
+- p:
+  - 32
+  - 33
+  k: ']}'
+  l:
+  - base
+  - num
+- p:
+  - 31
+  - 32
+  k: '{'
+  l:
+  - nav
+- p:
+  - 32
+  - 33
+  k: '}'
+  l:
+  - nav
+- p:
+  - 2
+  - 14
+  k: '@'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 3
+  - 15
+  k: '#'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 4
+  - 16
+  k: $
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 5
+  - 17
+  k: '%'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 14
+  - 26
+  k: '`'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 15
+  - 27
+  k: \
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 16
+  - 28
+  k: '='
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 17
+  - 29
+  k: '~'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 6
+  - 18
+  k: ^
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 7
+  - 19
+  k: +
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 8
+  - 20
+  k: '*'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 9
+  - 21
+  k: '&'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 18
+  - 30
+  k: _
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 19
+  - 31
+  k: '-'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 20
+  - 32
+  k: /
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 21
+  - 33
+  k: '|'
+  l:
+  - base
+  - nav
+  - num
