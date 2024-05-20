@@ -52,7 +52,8 @@ layers:
     - fn
     - "\u2423"
     - "\u23CE"
-  - - "\U0001F4A1\U0001F522"
+  - - t: "\U0001F4A1\U0001F522"
+      type: layer_keys
     - "\u2318"
   nav:
   - - "\u21B9"
@@ -169,7 +170,7 @@ layers:
     - "\u2423"
     - "\u23CE"
   - - t: "\u25BD"
-      type: trans
+      type: layer_keys
     - t: "\u25BD"
       type: trans
   num:
@@ -308,15 +309,15 @@ layers:
       type: trans
     - "\u21E7"
     - t: "\u25BD"
-      type: held
+      type: layer
     - t: "\u25BD"
-      type: held
+      type: layer
     - "\u2423"
     - "\u23CE"
   - - t: "\u25BD"
-      type: held
+      type: layer
     - t: "\u25BD"
-      type: held
+      type: layer
   mouse:
   - - "\u21B9"
     - t: "\u25BD"
@@ -380,10 +381,12 @@ layers:
       type: held
     - t: "\u25BD"
       type: trans
-    - "\u2423"
-    - "\u23CE"
-  - - $$mdi:mouse-left-click$$
+    - $$mdi:mouse-left-click$$
     - $$mdi:mouse-right-click$$
+  - - t: $$mid_mouse_btn$$
+      type: ''
+    - t: "\u25BD"
+      type: trans
 combos:
 - p:
   - 2

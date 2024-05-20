@@ -18,13 +18,19 @@
 <svg id="mdi:mouse-right-click">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-right-click" viewBox="0 0 24 24"><path d="M13 9V1.07C13.7 1.16 14.37 1.33 15 1.59C17.33 2.53 19.11 4.53 19.75 7C19.91 7.64 20 8.31 20 9H13M17.66 7C17.18 5.65 16.23 4.5 15 3.81V7H17.66M11 9V1.07C7.06 1.56 4 4.92 4 9H11M6.34 20.66C4.84 19.16 4 17.12 4 15V11H20V15C20 17.12 19.16 19.16 17.66 20.66C16.16 22.16 14.12 23 12 23C9.88 23 7.84 22.16 6.34 20.66Z" /></svg>
 </svg>
+<svg id="mid_mouse_btn">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path fill="black" d="M11 1.07C7.05 1.56 4 4.92 4 9h7V7.73c-.6-.34-1-.99-1-1.73V4c0-.74.4-1.39 1-1.73zM13 9V7.73c.6-.34 1-.99 1-1.73V4c0-.74-.4-1.39-1-1.73v-1.2c3.94.49 7 3.85 7 7.93zm-9 6c0 2.12.84 4.16 2.34 5.66S9.88 23 12 23s4.16-.84 5.66-2.34S20 17.12 20 15v-4H4zm9-9V4c0-.55-.45-1-1-1s-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1"/>
+</svg>
+
+</svg>
 </defs>/* end glyphs */
 <style>/* font and background color specifications */
 svg {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-kerning: normal;
     text-rendering: optimizeLegibility;
-    fill: #24292e;
+    fill: #04292e;
 }
 
 /* font and background color specifications */
@@ -178,6 +184,11 @@ rect.ghost, rect.combo.ghost {
     fill: #ddd;
 }
 
+rect.mouse_click {
+    fill: #white;
+    font-weight: bold;
+}
+
 text {
     text-anchor: middle;
     dominant-baseline: middle;
@@ -228,9 +239,10 @@ path {
 }
 
 /* thumb keys */
-.keypos-36, .keypos-37, .keypos-40 {
+.keypos-36, .keypos-37, .layer_keys {
     --color--key--bg: var(--color--material--blue-gray--100);
     --color--key--border: var(--color--material--blue-gray--50);
+    stroke-width: 2;
 }
 .keypos-41 {
     --color--key--bg: var(--color--material--blue--100);
@@ -422,9 +434,9 @@ path {
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
 <text x="0" y="0" class="key tap">⏎</text>
 </g>
-<g transform="translate(554, 213) rotate(-15.0)" class="key keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">💡🔢</text>
+<g transform="translate(554, 213) rotate(-15.0)" class="key layer_keys keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer_keys"/>
+<text x="0" y="0" class="key layer_keys tap">💡🔢</text>
 </g>
 <g transform="translate(616, 205)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -786,9 +798,9 @@ path {
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
 <text x="0" y="0" class="key tap">⏎</text>
 </g>
-<g transform="translate(554, 213) rotate(-15.0)" class="key trans keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(554, 213) rotate(-15.0)" class="key layer_keys keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer_keys"/>
+<text x="0" y="0" class="key layer_keys tap">▽</text>
 </g>
 <g transform="translate(616, 205)" class="key trans keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -982,27 +994,27 @@ path {
 </g>
 <g transform="translate(84, 49)" class="key bt_key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key bt_key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-10" y="-10" height="20" width="20.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-12" y="-12" height="25" width="25.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
 <text x="0" y="-24" class="key bt_key shifted">0</text>
 </g>
 <g transform="translate(140, 35)" class="key bt_key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key bt_key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-10" y="-10" height="20" width="20.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-12" y="-12" height="25" width="25.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
 <text x="0" y="-24" class="key bt_key shifted">1</text>
 </g>
 <g transform="translate(196, 28)" class="key bt_key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key bt_key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-10" y="-10" height="20" width="20.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-12" y="-12" height="25" width="25.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
 <text x="0" y="-24" class="key bt_key shifted">2</text>
 </g>
 <g transform="translate(252, 35)" class="key bt_key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key bt_key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-10" y="-10" height="20" width="20.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-12" y="-12" height="25" width="25.0" class="key bt_key tap glyph mdi:bluetooth-connect"/>
 <text x="0" y="-24" class="key bt_key shifted">3</text>
 </g>
 <g transform="translate(308, 42)" class="key bt_key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key bt_key"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-10" y="-10" height="20" width="20.0" class="key bt_key tap glyph mdi:bluetooth"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-12" y="-12" height="25" width="25.0" class="key bt_key tap glyph mdi:bluetooth"/>
 <use href="#mdi:close-thick" xlink:href="#mdi:close-thick" x="-5" y="-24" height="10" width="10.0" class="key bt_key shifted glyph mdi:close-thick"/>
 </g>
 <g transform="translate(532, 42)" class="key trans keypos-6">
@@ -1051,11 +1063,11 @@ path {
 </g>
 <g transform="translate(308, 98)" class="key boot_loader keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key boot_loader"/>
-<use href="#mdi:memory-arrow-down" xlink:href="#mdi:memory-arrow-down" x="-10" y="-10" height="20" width="20.0" class="key boot_loader tap glyph mdi:memory-arrow-down"/>
+<use href="#mdi:memory-arrow-down" xlink:href="#mdi:memory-arrow-down" x="-12" y="-12" height="25" width="25.0" class="key boot_loader tap glyph mdi:memory-arrow-down"/>
 </g>
 <g transform="translate(532, 98)" class="key boot_loader keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key boot_loader"/>
-<use href="#mdi:memory-arrow-down" xlink:href="#mdi:memory-arrow-down" x="-10" y="-10" height="20" width="20.0" class="key boot_loader tap glyph mdi:memory-arrow-down"/>
+<use href="#mdi:memory-arrow-down" xlink:href="#mdi:memory-arrow-down" x="-12" y="-12" height="25" width="25.0" class="key boot_loader tap glyph mdi:memory-arrow-down"/>
 </g>
 <g transform="translate(588, 91)" class="key trans keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1125,13 +1137,13 @@ path {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">⇧</text>
 </g>
-<g transform="translate(224, 205)" class="key held keypos-36">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
-<text x="0" y="0" class="key held tap">▽</text>
+<g transform="translate(224, 205)" class="key layer keypos-36">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer"/>
+<text x="0" y="0" class="key layer tap">▽</text>
 </g>
-<g transform="translate(286, 213) rotate(15.0)" class="key held keypos-37">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
-<text x="0" y="0" class="key held tap">▽</text>
+<g transform="translate(286, 213) rotate(15.0)" class="key layer keypos-37">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer"/>
+<text x="0" y="0" class="key layer tap">▽</text>
 </g>
 <g transform="translate(351, 224) rotate(30.0)" class="key keypos-38">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
@@ -1141,13 +1153,13 @@ path {
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
 <text x="0" y="0" class="key tap">⏎</text>
 </g>
-<g transform="translate(554, 213) rotate(-15.0)" class="key held keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
-<text x="0" y="0" class="key held tap">▽</text>
+<g transform="translate(554, 213) rotate(-15.0)" class="key layer keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer"/>
+<text x="0" y="0" class="key layer tap">▽</text>
 </g>
-<g transform="translate(616, 205)" class="key held keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
-<text x="0" y="0" class="key held tap">▽</text>
+<g transform="translate(616, 205)" class="key layer keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key layer"/>
+<text x="0" y="0" class="key layer tap">▽</text>
 </g>
 </g>
 </g>
@@ -1308,19 +1320,19 @@ path {
 </g>
 <g transform="translate(351, 224) rotate(30.0)" class="key keypos-38">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
-<text x="0" y="0" class="key tap">␣</text>
+<use href="#mdi:mouse-left-click" xlink:href="#mdi:mouse-left-click" x="-12" y="-12" height="25" width="25.0" class="key tap glyph mdi:mouse-left-click"/>
 </g>
 <g transform="translate(489, 224) rotate(-30.0)" class="key keypos-39">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
-<text x="0" y="0" class="key tap">⏎</text>
+<use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-12" y="-12" height="25" width="25.0" class="key tap glyph mdi:mouse-right-click"/>
 </g>
 <g transform="translate(554, 213) rotate(-15.0)" class="key keypos-40">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:mouse-left-click" xlink:href="#mdi:mouse-left-click" x="-10" y="-10" height="20" width="20.0" class="key tap glyph mdi:mouse-left-click"/>
+<use href="#mid_mouse_btn" xlink:href="#mid_mouse_btn" x="-12" y="-12" height="25" width="25.0" class="key tap glyph mid_mouse_btn"/>
 </g>
-<g transform="translate(616, 205)" class="key keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-10" y="-10" height="20" width="20.0" class="key tap glyph mdi:mouse-right-click"/>
+<g transform="translate(616, 205)" class="key trans keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 </g>
 </g>

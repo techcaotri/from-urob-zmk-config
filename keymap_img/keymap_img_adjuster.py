@@ -20,6 +20,7 @@ pressed_buttons = [
     ('fn', 38),
     ('num', 41),
     ('mouse', 37),
+    ('mouse', 41),
     ('sys', 37),
     ('sys', 38),
     ('sys', 41),
@@ -113,7 +114,10 @@ def highlight_buttons(keymap, buttons):
 
         button_item = b_row[b_index]
         if type(button_item) is dict:
-            button_item['type'] = 'held'
+            if b_layer == 'sys':
+                button_item['type'] = 'layer'
+            else:
+                button_item['type'] = 'held'
         else:
             if b_layer == 'sys':
                 button_dict = {
@@ -125,7 +129,42 @@ def highlight_buttons(keymap, buttons):
                     't': button_item,
                     'type': 'held',
                 }
+
             b_row[b_index] = button_dict
+
+        # highlight keypos-40 depending on the layer
+        layer_names = ['base', 'fn', 'mouse']
+        for layer_name in layer_names:
+            layer = keymap['layers'].get(layer_name, None)
+            b_num = 40
+            b_row = None
+            b_index = None
+            prev_layer_buttons = 0
+            for layer_row in layer:
+                if prev_layer_buttons + len(layer_row) > b_num:
+                    b_row = layer_row
+                    b_index = b_num - prev_layer_buttons
+                    break
+                else:
+                    prev_layer_buttons += len(layer_row)
+            button_item = b_row[b_index]
+            if layer_name == 'mouse':
+                if type(button_item) is dict:
+                    button_item['type'] = ''
+                else:
+                    button_dict = {
+                        't': button_item,
+                        'type': '',
+                    }
+            else:
+                if type(button_item) is dict:
+                    button_item['type'] = 'layer_keys'
+                else:
+                    button_dict = {
+                        't': button_item,
+                        'type': 'layer_keys',
+                    }
+
 
     return keymap
 
