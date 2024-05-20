@@ -12,6 +12,7 @@
 #define X_RB    &kp RSHFT
 
 #define X_MH    &kp SPACE  &kp RET 
+#define X_MH_M  &mkp LCLK  &mkp RCLK
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
