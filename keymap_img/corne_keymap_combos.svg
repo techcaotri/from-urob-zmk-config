@@ -513,6 +513,10 @@ path {
 <rect rx="6" ry="6" x="686" y="106" width="28" height="26" class="combo"/>
 <text x="700" y="119" class="combo tap">|</text>
 </g>
+<g class="combo combopos-28">
+<rect rx="6" ry="6" x="571" y="196" width="28" height="26" class="combo"/>
+<text x="585" y="209" class="combo tap">sys</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 352)" class="layer-nav">
@@ -761,6 +765,10 @@ path {
 <g class="combo combopos-27">
 <rect rx="6" ry="6" x="686" y="106" width="28" height="26" class="combo"/>
 <text x="700" y="119" class="combo tap">|</text>
+</g>
+<g class="combo combopos-28">
+<rect rx="6" ry="6" x="571" y="196" width="28" height="26" class="combo"/>
+<text x="585" y="209" class="combo tap">sys</text>
 </g>
 </g>
 </g>
@@ -1014,6 +1022,10 @@ path {
 <g class="combo combopos-27">
 <rect rx="6" ry="6" x="686" y="106" width="28" height="26" class="combo"/>
 <text x="700" y="119" class="combo tap">|</text>
+</g>
+<g class="combo combopos-28">
+<rect rx="6" ry="6" x="571" y="196" width="28" height="26" class="combo"/>
+<text x="585" y="209" class="combo tap">sys</text>
 </g>
 </g>
 </g>

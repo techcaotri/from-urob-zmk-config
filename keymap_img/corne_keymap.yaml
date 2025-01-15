@@ -164,8 +164,7 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - t: "\u25BD"
-      type: trans
+    - sys
     - type: held
     - "\u2423"
     - "\u23CE"
@@ -308,10 +307,8 @@ layers:
     - t: "\u25BD"
       type: trans
     - "\u21E7"
-    - t: "\u25BD"
-      type: layer
-    - t: "\u25BD"
-      type: layer
+    - type: layer
+    - type: layer
     - "\u2423"
     - "\u23CE"
   - - t: "\u25BD"
@@ -630,6 +627,14 @@ combos:
   - 21
   - 33
   k: '|'
+  l:
+  - base
+  - nav
+  - num
+- p:
+  - 40
+  - 41
+  k: sys
   l:
   - base
   - nav
