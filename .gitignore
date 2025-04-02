@@ -2,7 +2,6 @@
 .ccls-cache
 .west
 modules
-zephyr/
 zmk/
 adv360pro_keymap.yaml
 adv360_keymap.svg
