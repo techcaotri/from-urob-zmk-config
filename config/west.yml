@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/dhruvinsh
     - name: gpeye
       url-base: https://github.com/GPeye
+    - name: techcaotri
+      url-base: https://github.com/techcaotri
   projects:
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
@@ -29,5 +31,8 @@ manifest:
     - name: mario-peripheral-animation
       remote: gpeye
       revision: main 
+    - name: zmk-nice-oled
+      remote: techcaotri
+      revision: add_nice_epaper_new
   self:
     path: config
