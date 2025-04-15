@@ -2,7 +2,6 @@
 include:
   - board: eyelash_corne_left
     shield: nice_epaper
-    snippet: zmk-usb-logging
   - board: eyelash_corne_left
     shield: nice_epaper_new
     #snippet: zmk-usb-logging    # Uncomment to log over USB.
