@@ -2,37 +2,25 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-      # Additional modules containing boards/shields/custom code can be listed here as well.
-      # See:
-      # - https://zmk.dev/docs/features/modules
-      # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
-    - name: urob
-      url-base: https://github.com/urob
-    - name: dhruvinsh
-      url-base: https://github.com/dhruvinsh
     - name: gpeye
       url-base: https://github.com/GPeye
-    - name: techcaotri
-      url-base: https://github.com/techcaotri
+    - name: tokyo2006
+      url-base: https://github.com/tokyo2006
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
-    # - name: eyelash_corne
-    #   url: https://github.com/a741725193/zmk-new_corne
-    #   revision: main
+    - name: hammerbeam-slideshow
+      remote: gpeye
+      revision: main 
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-helpers
-      remote: urob
+    - name: prospector-zmk-module                 # <--- and these
+      remote: tokyo2006                          # <---
+      revision: change_spi2
+    - name: zmk-dongle-display
+      remote: englmaxi
       revision: main
-    - name: zmk-tri-state
-      remote: dhruvinsh
-      revision: main
-    - name: mario-peripheral-animation
-      remote: gpeye
-      revision: main 
-    - name: zmk-nice-oled
-      remote: techcaotri
-      revision: add_nice_epaper_new
   self:
     path: config

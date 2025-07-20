@@ -1,0 +1,16 @@
+file_format: "1"
+id: eyeslash_corne
+name: Eyeslash Sofle
+url: https://github.com/a741725193/zmk-corne-dongle
+type: shield
+requires: [pro_micro]
+features:
+  - keys
+  - display
+outputs:
+  - usb
+  - ble
+siblings:
+  - eyeslash_corne_peripheral_left
+  - eyeslash_corne_peripheral_right
+  - eyeslash_corne_central_dongle

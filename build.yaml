@@ -1,19 +1,18 @@
 ---
 include:
-  - board: eyelash_corne_left
-    shield: nice_epaper
-  - board: eyelash_corne_left
-    shield: nice_epaper_new
-    #snippet: zmk-usb-logging    # Uncomment to log over USB.
-  - board: eyelash_corne_right
-    shield: nice_view_custom
-    #snippet: zmk-usb-logging
-  # - board: eyelash_corne_left
-  #   shield: nice_view_custom
-  #   snippet: studio-rpc-usb-uart
-  #   cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-  #   artifact-name: eyelash_corne_studio_left
-  - board: eyelash_corne_left
+#  - board: nice_nano_v2
+#    shield: eyeslash_corne_central_dongle prospector_adapter
+#    snippet: studio-rpc-usb-uart
+#    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+#     artifact-name: eyeslash_corne_central_dongle
+  - board: nice_nano_v2
+    shield: eyeslash_corne_central_dongle dongle_display
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: eyeslash_corne_central_dongle_oled
+  - board: nice_nano_v2
+    shield: eyeslash_corne_peripheral_left nice_view_custom
+  - board: nice_nano_v2
+    shield: eyeslash_corne_peripheral_right nice_view_custom
+  - board: nice_nano_v2
     shield: settings_reset
-    #snippet: zmk-usb-logging
- 
