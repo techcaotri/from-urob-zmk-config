@@ -2,6 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
     - name: gpeye
       url-base: https://github.com/GPeye
     - name: tokyo2006
@@ -16,6 +20,12 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
     - name: prospector-zmk-module                 # <--- and these
       remote: tokyo2006                          # <---
       revision: change_spi2

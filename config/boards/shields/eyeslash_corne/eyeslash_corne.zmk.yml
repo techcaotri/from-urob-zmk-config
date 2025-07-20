@@ -1,6 +1,6 @@
 file_format: "1"
 id: eyeslash_corne
-name: Eyeslash Sofle
+name: Eyeslash Corne Dongle
 url: https://github.com/a741725193/zmk-corne-dongle
 type: shield
 requires: [pro_micro]
