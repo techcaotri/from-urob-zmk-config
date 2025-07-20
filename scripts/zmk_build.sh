@@ -184,7 +184,7 @@ compile_board () {
 
     echo ""
     echo "$(pwd)"
-    echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
+    echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS  \
         -- -DZMK_CONFIG=$CONFIG_DIR $SHIELD_OPTS -DZMK_EXTRA_MODULES=$HOST_CONFIG_DIR -Wno-dev 2>&1 | tee "$LOGFILE""
     $DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
         -- -DZMK_CONFIG="$CONFIG_DIR" "$SHIELD_OPTS" -DZMK_EXTRA_MODULES="$HOST_CONFIG_DIR" -Wno-dev 2>&1 | tee "$LOGFILE" 

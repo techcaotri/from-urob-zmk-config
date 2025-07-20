@@ -6,8 +6,14 @@ manifest:
       # See:
       # - https://zmk.dev/docs/features/modules
       # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
-    - name: gpeye                         #new entry
-      url-base: https://github.com/GPeye  #new entry
+    - name: urob
+      url-base: https://github.com/urob
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
+    - name: gpeye
+      url-base: https://github.com/GPeye
+    - name: techcaotri
+      url-base: https://github.com/techcaotri
   projects:
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
@@ -16,8 +22,17 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: mario-peripheral-animation   #new entry
-      remote: gpeye                       #new entry
-      revision: main                      #new entry
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
+    - name: mario-peripheral-animation
+      remote: gpeye
+      revision: main 
+    - name: zmk-nice-oled
+      remote: techcaotri
+      revision: add_nice_epaper_new
   self:
     path: config
