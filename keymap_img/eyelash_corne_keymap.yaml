@@ -15,8 +15,8 @@ layers:
   - {t: \, s: '|'}
   - $$mdi:keyboard-esc$$
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: S, h: ⌃}
-  - {t: D, h: ⎇}
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
   - F
   - G
   - $$mdi:arrow-left-bold$$
@@ -24,8 +24,8 @@ layers:
   - $$mdi:arrow-right-bold$$
   - H
   - J
-  - {t: K, h: ⎇}
-  - {t: L, h: ⌃}
+  - {t: K, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-shift$$
@@ -42,12 +42,12 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:apple-keyboard-shift$$
-  - 🖱
+  - mouse
   - fn
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: 💡🔢, type: layer_keys}
-  - ⌘
+  - {t: base, h: num}
+  - LGUI
   fn:
   - $$mdi:keyboard-tab$$
   - F12
@@ -56,22 +56,22 @@ layers:
   - F9
   - $$mdi:printer-outline$$
   - $$mdi:arrow-up-bold$$
-  - ⇞
-  - ⇤
+  - PG UP
+  - HOME
   - $$mdi:arrow-up-bold$$
-  - ⇥
+  - END
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: \, s: '|'}
   - $$mdi:keyboard-esc$$
   - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: F4, h: ⌃}
-  - {t: F5, h: ⎇}
+  - {t: F4, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: F5, h: '$$mdi:apple-keyboard-option$$'}
   - F6
   - SLCK
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
-  - ⇟
+  - PG DN
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -85,7 +85,7 @@ layers:
   - PAUSE BREAK
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - ⎀
+  - INS
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -113,9 +113,9 @@ layers:
   - {t: \, s: '|'}
   - $$mdi:keyboard-esc$$
   - {t: '0', h: '$$mdi:apple-keyboard-shift$$', s: )}
-  - {t: '4', h: ⌃, s: $}
-  - {t: '5', h: ⎇, s: '%'}
-  - {t: '6', h: ⌘, s: ^}
+  - {t: '4', h: '$$mdi:apple-keyboard-control$$', s: $}
+  - {t: '5', h: '$$mdi:apple-keyboard-option$$', s: '%'}
+  - {t: '6', h: LGUI, s: ^}
   - $
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -144,7 +144,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   sys:
   - $$mdi:keyboard-tab$$
@@ -238,7 +238,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-right-click-outline$$
@@ -246,26 +246,22 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [2, 4]
-  k: 💡🖱
+  k: '&smart_mouse'
   l: [base, num]
-  a: top
-  o: 0.25
 - p: [15, 16]
-  k: ↹
+  k: {t: '$$mdi:keyboard-tab$$', h: 'Alt+$$mdi:apple-keyboard-control$$'}
   l: [base, num]
 - p: [16, 17]
-  k: 'KRP
-
-    ⇧⌃'
+  k: {t: '&key_repeat', h: 'Sft+$$mdi:apple-keyboard-control$$'}
   l: [base, num]
 - p: [30, 32]
-  k: ^X/✄
+  k: Ctl+X
   l: [base, num]
 - p: [30, 31]
-  k: ^⎀/⧉
+  k: Ctl+INS
   l: [base, num]
 - p: [31, 32]
-  k: ⇧⎀/⎘
+  k: Sft+INS
   l: [base, num]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
@@ -274,19 +270,17 @@ combos:
   k: $$mdi:backspace-reverse-outline$$
   l: [base, num]
 - p: [23, 24]
-  k: '(<
-
-    ⇧⌃'
+  k: {t: (, h: 'Sft+$$mdi:apple-keyboard-control$$', s: <}
   l: [base, num]
 - p: [24, 25]
-  k: ')>
-
-    ⎇⌃'
+  k: {t: ), h: 'Alt+$$mdi:apple-keyboard-control$$', s: '>'}
   l: [base, num]
 - p: [23, 24]
   k: <
+  l: [base, num]
 - p: [24, 25]
   k: '>'
+  l: [base, num]
 - p: [37, 38]
   k: {h: '[', s: '{'}
   l: [base, num]
@@ -295,8 +289,10 @@ combos:
   l: [base, num]
 - p: [37, 38]
   k: '{'
+  l: [base, num]
 - p: [38, 39]
   k: '}'
+  l: [base, num]
 - p: [2, 15]
   k: '@'
   l: [base, num]
