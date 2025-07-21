@@ -3,7 +3,7 @@
 echo 'Checking if the "../config/zmk-helpers" directory exists...'
 if [ ! -d "../config/zmk-helpers" ]; then
     echo 'Directory "../config/zmk-helpers" does not exist. Please make the soft link to zmk-helpers include in build directory...'
-    echo 'ln -s /home/tripham/Dev/Kinesis_Adv360_Pro/Sources/source_urob_zmk_eyelash_corne/zmk-helpers/include/zmk-helpers ../config/zmk-helpers'
+    echo 'ln -s /home/tripham/Dev/Kinesis_Adv360_Pro/Sources/source_urob_zmk_eyelash_corne_dongle/zmk-helpers/include/zmk-helpers ../config/zmk-helpers'
     exit
 fi
 
