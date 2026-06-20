@@ -18,21 +18,25 @@ manifest:
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
     #   revision: main
+    # NOTE: revisions are pinned to the known-good stack that the eyelash_corne
+    # variant builds against (ZMK April 2025 -> Zephyr v3.5.0+zmk-fixes). The
+    # upstream branches above moved on to Zephyr 4.x, which the urob/eyelash_corne
+    # board (old Zephyr board model) cannot build. Re-pin deliberately if bumping.
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 6f85f48b19afae04f98e9abacb36ce1425b61f78
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: 8d7e79731803c961bae61f6fc8ffa3a35a62e5eb
     - name: zmk-tri-state
       remote: dhruvinsh
-      revision: main
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
     - name: mario-peripheral-animation
       remote: gpeye
-      revision: main 
+      revision: 1aa3950d6c86b4240b3f79d06bdbb04c5d920711
     - name: zmk-nice-oled
       remote: techcaotri
-      revision: add_nice_epaper_new
+      revision: ff9969d3fdd49cb9a3a8ee3934b96781f2265aee
   self:
     path: config
