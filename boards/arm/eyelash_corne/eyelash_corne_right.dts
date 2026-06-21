@@ -69,6 +69,11 @@
         natural-scroll-y;
         natural-scroll-x;
 
+        /* Custom gestures (see driver Parts C & D). */
+        zoom;                                  /* two-finger pinch-to-zoom */
+        three-finger-swipe;                    /* three-finger swipe up -> launch app */
+        three-finger-swipe-threshold = <80>;   /* tune: lower = more sensitive */
+
         /* Sensitivity (rolio reference values). */
         bottom-beta = <5>;
         stationary-threshold = <5>;
