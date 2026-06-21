@@ -10,18 +10,8 @@ manifest:
       url-base: https://github.com/urob
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
-    - name: gpeye
-      url-base: https://github.com/GPeye
     - name: techcaotri
       url-base: https://github.com/techcaotri
-    # Azoteq IQS5xx touchpad driver (consumed as a Zephyr module). The base
-    # driver lives upstream at AYM1607; our custom pinch-zoom + 3-finger-swipe
-    # patches live in a local editable checkout that the prepare script links
-    # into the workspace at the `zmk-driver-azoteq-iqs5xx` path (see
-    # build_scripts_urob_zmk/prepare_zmk_build_environment.sh). To build from a
-    # pushed fork instead, change `remote`/`revision` below to your fork.
-    - name: aym1607
-      url-base: https://github.com/AYM1607
   projects:
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
@@ -40,14 +30,15 @@ manifest:
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
-    - name: mario-peripheral-animation
-      remote: gpeye
-      revision: 1aa3950d6c86b4240b3f79d06bdbb04c5d920711
     - name: zmk-nice-oled
       remote: techcaotri
       revision: ff9969d3fdd49cb9a3a8ee3934b96781f2265aee
+    # Azoteq IQS5xx touchpad driver with our custom pinch-zoom and three-finger
+    # swipe-up gestures (fork of AYM1607/zmk-driver-azoteq-iqs5xx). The touchpad
+    # replaced the right-half OLED, so mario-peripheral-animation (the
+    # nice_view_custom peripheral animation) is no longer used and was removed.
     - name: zmk-driver-azoteq-iqs5xx
-      remote: aym1607
-      revision: main
+      remote: techcaotri
+      revision: feature/zoom-and-swipe
   self:
     path: config
