@@ -6,7 +6,9 @@ include:
     shield: nice_epaper_new
     #snippet: zmk-usb-logging    # Uncomment to log over USB.
   - board: eyelash_corne_right
-    shield: nice_view_custom
+    # No display shield: the Azoteq touchpad replaced the right-half OLED.
+    # Touchpad/I2C come from config/eyelash_corne.conf; display is turned off
+    # for this half by config/eyelash_corne_right.conf.
     #snippet: zmk-usb-logging
   # - board: eyelash_corne_left
   #   shield: nice_view_custom

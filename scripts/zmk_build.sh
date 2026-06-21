@@ -86,7 +86,13 @@ done
 [[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/zmk-config"
 
 [[ -z $BOARDS ]] && BOARDS="$(grep '^[[:space:]]*\-[[:space:]]*board:' $HOST_CONFIG_DIR/build.yaml | sed 's/^.*: *//')"
-[[ -z $SHIELDS ]] && SHIELDS="$(grep '^[[:space:]]*[[:space:]]*shield:' $HOST_CONFIG_DIR/build.yaml | sed 's/^.*: *//')"
+# Emit exactly one shield line per board entry (empty when a board has no shield,
+# e.g. a display-less peripheral) so BOARDS and SHIELDS stay index-aligned.
+[[ -z $SHIELDS ]] && SHIELDS="$(awk '
+    /^[[:space:]]*-[[:space:]]*board:/ { if (seen) print sh; sh=""; seen=1; next }
+    /^[[:space:]]*shield:/ { s=$0; sub(/^[^:]*:[[:space:]]*/,"",s); sh=s }
+    END { if (seen) print sh }
+' $HOST_CONFIG_DIR/build.yaml)"
 
 [[ -z $CLEAR_CACHE ]] && CLEAR_CACHE="false"
 
@@ -171,13 +177,14 @@ compile_board () {
     echo -en "\n$(tput setaf 2)Building $1 $2 ... $(tput sgr0)"
     if [[ -n $2 ]]
     then
-        SHIELD_OPTS="-DSHIELD=$2"
-        echo "SHIELD_OPTS: $SHIELD_OPTS"
+        SHIELD_OPTS=("-DSHIELD=$2")
+        echo "SHIELD_OPTS: ${SHIELD_OPTS[*]}"
         SHIELD_SUFFIX=$(echo "$2" | awk '{print $1}')
         echo "SHIELD_SUFFIX: ${SHIELD_SUFFIX}"
     else
-        SHIELD_OPTS=""
-        SHIELD_SUFFIX=""
+        SHIELD_OPTS=()
+        echo "SHIELD_OPTS: (none -- display-less board)"
+        SHIELD_SUFFIX="nodisplay"
     fi
     BUILD_DIR="${1}_${SHIELD_SUFFIX}_$SUFFIX"
     LOGFILE="$LOG_DIR/zmk_build_$1.log"
@@ -185,9 +192,9 @@ compile_board () {
     echo ""
     echo "$(pwd)"
     echo "$DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS  \
-        -- -DZMK_CONFIG=$CONFIG_DIR $SHIELD_OPTS -DZMK_EXTRA_MODULES=$HOST_CONFIG_DIR -Wno-dev 2>&1 | tee "$LOGFILE""
+        -- -DZMK_CONFIG=$CONFIG_DIR ${SHIELD_OPTS[*]} -DZMK_EXTRA_MODULES=$HOST_CONFIG_DIR -Wno-dev 2>&1 | tee "$LOGFILE""
     $DOCKER_PREFIX west build -s . -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" "$SHIELD_OPTS" -DZMK_EXTRA_MODULES="$HOST_CONFIG_DIR" -Wno-dev 2>&1 | tee "$LOGFILE" 
+        -- -DZMK_CONFIG="$CONFIG_DIR" "${SHIELD_OPTS[@]}" -DZMK_EXTRA_MODULES="$HOST_CONFIG_DIR" -Wno-dev 2>&1 | tee "$LOGFILE"
     if [[ $? -eq 0 ]]
     then
         # echo "$(tput setaf 4)Success: $1 done$(tput sgr0)"
@@ -212,11 +219,10 @@ compile_board () {
 cd "$HOST_ZMK_DIR/app"
 echo "BOARDS: $BOARDS"
 echo "SHIELDS: $SHIELDS"
-SAVEIFS=$IFS   # Save current IFS (Internal Field Separator)
-IFS=$'\n'      # Change IFS to newline char
-BOARDS=($BOARDS) # split the `BOARDS` string into an array by the same name
-SHIELDS=($SHIELDS) # split the `SHIELDS` string into an array by the same name
-IFS=$SAVEIFS   # Restore original IFS
+# Use mapfile so empty shield entries (display-less boards) survive as array
+# elements -- plain word-splitting would drop them and misalign the arrays.
+mapfile -t BOARDS <<< "$BOARDS"
+mapfile -t SHIELDS <<< "$SHIELDS"
 for (( i=0; i<${#BOARDS[@]}; i++ ))
 do
     printf "compile_board %s with %s\n" "${BOARDS[i]}" "${SHIELDS[i]}"
