@@ -230,3 +230,31 @@ nice_view_spi: &spi0 {
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
     };
 };
+
+/*
+ * Azoteq IQS5xx touchpad split plumbing (shared by both halves).
+ *
+ * The touchpad is wired to the RIGHT (peripheral) half. Its driver emits input
+ * events there; `zmk,input-split` forwards them over the BLE split link to the
+ * LEFT (central) half, where `tps43_listener` turns them into a HID mouse
+ * report. The listener is enabled on the central only (see eyelash_corne_left.dts);
+ * its input-processors (orientation transforms + auto-mouse layer) are attached
+ * from config/base.keymap so we don't double-include <input/processors.dtsi>.
+ */
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        tps43_split: tps43_split@74 {
+            compatible = "zmk,input-split";
+            reg = <0x74>;
+        };
+    };
+
+    tps43_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";          /* enabled on the central only (left overlay) */
+        device = <&tps43_split>;
+    };
+};

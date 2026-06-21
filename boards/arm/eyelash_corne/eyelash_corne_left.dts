@@ -10,3 +10,8 @@
 &left_encoder {
     status = "okay";
 };
+
+/* LEFT = central: turn the touchpad listener on so relayed events become HID. */
+&tps43_listener {
+    status = "okay";
+};

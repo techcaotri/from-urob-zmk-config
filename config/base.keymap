@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 
 #define DEF 0
@@ -256,6 +257,16 @@ ZMK_MACRO(win_sleep,
       bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
       tap-ms = <30>;
   };
+};
+
+/* Azoteq IQS5xx touchpad: orientation transforms on the central listener.
+ * Attached here (not in the board dtsi) because <input/processors.dtsi> is
+ * already included above; declaring it twice would duplicate nodes.
+ * Flags mirror the rolio reference; adjust per guide section 9.3 if axes are wrong. */
+&tps43_listener {
+    input-processors =
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+        <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>;
 };
 
 ZMK_LAYER(base,

@@ -10,3 +10,75 @@
 &default_transform {
     col-offset = <7>;
 };
+
+/*
+ * Azoteq IQS5xx touchpad (RIGHT / peripheral half).
+ *
+ * The eyelash_corne board defines no I2C bus (display = spi0, RGB = spi3,
+ * backlight = pwm0), so we bring up i2c1 (TWIM1), which is otherwise unused.
+ *
+ * Pin policy (per the authority split for this build):
+ *   - RDY / RESET / address / gesture / orientation config below mirror the
+ *     working LXF-YZP/zmk-config-rolio reference verbatim (hardware-authoritative).
+ *   - SDA/SCL: rolio shares the OLED's i2c0 (P0.17/P0.20), but those pins are
+ *     taken by the Corne's SPI display, so the bus is hosted on free GPIOs here.
+ *
+ * >>> VERIFY THESE FOUR PINS AGAINST YOUR ACTUAL RIGHT-HALF WIRING <<<
+ *     SDA = P1.11, SCL = P1.15 (free on the Corne; placeholders to confirm).
+ *     RDY = P1.02, RESET = P1.01 (from rolio; free on the Corne).
+ */
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>,   /* SDA -- verify */
+                    <NRF_PSEL(TWIM_SCL, 1, 15)>;   /* SCL -- verify */
+        };
+    };
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 11)>,
+                    <NRF_PSEL(TWIM_SCL, 1, 15)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <400000>;   /* I2C_BITRATE_FAST (400 kHz) */
+
+    tps43: iqs5xx@74 {
+        status = "okay";
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
+
+        reset-gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;    /* RESET -- verify */
+        rdy-gpios   = <&gpio1 2 GPIO_ACTIVE_HIGH>;   /* RDY   -- verify */
+
+        /* Gestures the chip should report (rolio reference values). */
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        /* Sensitivity (rolio reference values). */
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
+
+        /* Orientation -- adjust after first test (see guide section 9.3). */
+        switch-xy;
+    };
+};
+
+/* Peripheral side: forward this pointer device over the split link. */
+&tps43_split {
+    device = <&tps43>;
+};

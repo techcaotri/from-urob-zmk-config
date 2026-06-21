@@ -14,7 +14,14 @@ manifest:
       url-base: https://github.com/GPeye
     - name: techcaotri
       url-base: https://github.com/techcaotri
-  projects:
+    # Azoteq IQS5xx touchpad driver (consumed as a Zephyr module). The base
+    # driver lives upstream at AYM1607; our custom pinch-zoom + 3-finger-swipe
+    # patches live in a local editable checkout that the prepare script links
+    # into the workspace at the `zmk-driver-azoteq-iqs5xx` path (see
+    # build_scripts_urob_zmk/prepare_zmk_build_environment.sh). To build from a
+    # pushed fork instead, change `remote`/`revision` below to your fork.
+    - name: aym1607
+      url-base: https://github.com/AYM1607
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
     #   revision: main
@@ -38,5 +45,8 @@ manifest:
     - name: zmk-nice-oled
       remote: techcaotri
       revision: ff9969d3fdd49cb9a3a8ee3934b96781f2265aee
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: aym1607
+      revision: main
   self:
     path: config
