@@ -17,9 +17,10 @@ while [[ $# -gt 0 ]]; do
             ;;
 
         # comma or space separated list of boards (use quotes if space separated)
-        # if ommitted, will compile list of boards in build.yaml
+        # Filters build.yaml to entries whose board matches, keeping each entry's
+        # own shield. If omitted, every entry in build.yaml is built.
         -b|--board)
-            BOARDS="$2"
+            BOARD_FILTER="$2"
             shift
             ;;
 
@@ -219,12 +220,20 @@ compile_board () {
 cd "$HOST_ZMK_DIR/app"
 echo "BOARDS: $BOARDS"
 echo "SHIELDS: $SHIELDS"
+[[ -n $BOARD_FILTER ]] && echo "BOARD_FILTER: $BOARD_FILTER"
 # Use mapfile so empty shield entries (display-less boards) survive as array
 # elements -- plain word-splitting would drop them and misalign the arrays.
 mapfile -t BOARDS <<< "$BOARDS"
 mapfile -t SHIELDS <<< "$SHIELDS"
+# Normalise the optional -b filter (comma/space separated) to a padded string we
+# can substring-match against, so "-b eyelash_corne_right" builds just that
+# board's build.yaml entries (with their own shields).
+filter_norm=" ${BOARD_FILTER//,/ } "
 for (( i=0; i<${#BOARDS[@]}; i++ ))
 do
+    if [[ -n $BOARD_FILTER && $filter_norm != *" ${BOARDS[i]} "* ]]; then
+        continue
+    fi
     printf "compile_board %s with %s\n" "${BOARDS[i]}" "${SHIELDS[i]}"
     compile_board "${BOARDS[i]}" "${SHIELDS[i]}"
 done
