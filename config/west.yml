@@ -22,6 +22,7 @@ manifest:
     # pushed fork instead, change `remote`/`revision` below to your fork.
     - name: aym1607
       url-base: https://github.com/AYM1607
+  projects:
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
     #   revision: main
