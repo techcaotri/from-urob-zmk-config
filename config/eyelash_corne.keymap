@@ -22,6 +22,14 @@
 #define X_MM_M             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT
 #define X_MB_M  &kp C_MUTE                 &mmv MOVE_DOWN
 
+/* auto-mouse layer (Part F): transparent centre, clicks on the thumb keys.
+ * SPACE (LH0) -> right-click, ENTER/RET (RH0) -> left-click. Key counts must
+ * match the base X_M* macros so the layer keeps its 48-key shape. */
+#define X_MT_A                             ___
+#define X_MM_A             ___             ___             ___
+#define X_MB_A  ___                        ___
+#define X_MH_A  &mkp RCLK  &mkp LCLK
+
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1
