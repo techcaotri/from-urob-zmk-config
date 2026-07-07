@@ -15,3 +15,60 @@
 &tps43_listener {
     status = "okay";
 };
+
+/*
+ * SSD1306 OLED (128x32) on I2C0 @0x3c -- the panel this hardware actually has
+ * (mirrors the rolio sofle OLED). P0.17/P0.20 are shared: SPI0 (the board's
+ * nice_view_spi) and I2C0 are the SAME nRF instance (0x40003000), and the RIGHT half
+ * uses these same I2C0 pins for the touchpad. Here on the LEFT we free SPI0 and let
+ * I2C0 drive the display.
+ */
+&nice_view_spi {
+    status = "disabled";
+};
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+        };
+    };
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};

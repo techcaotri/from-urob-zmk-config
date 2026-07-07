@@ -2,13 +2,13 @@
 # artifact-name gives each firmware a clear, self-describing filename in the output
 # dir (the build script uses it verbatim, e.g. eyelash_corne_right_touchpad.uf2).
 #
-# Hardware matches LXF-YZP/zmk-config-rolio@tps65 (same 42-key Corne + TPS65
-# touchpad + vista508 LS0xx display): LEFT = central + vista508 display; RIGHT =
-# peripheral + touchpad (on I2C0, sharing the display connector's P0.17/P0.20 pins).
+# Hardware matches LXF-YZP/zmk-config-rolio *master* (42-key Corne + TPS65 touchpad +
+# SSD1306 OLED): LEFT = central + SSD1306 OLED (I2C0 @0x3c, via the nice_oled widgets);
+# RIGHT = peripheral + touchpad (I2C0 @0x74). Both halves own I2C0 on P0.17/P0.20.
 include:
   - board: eyelash_corne_left
-    shield: vista508
-    artifact-name: eyelash_corne_left_vista508
+    shield: nice_oled
+    artifact-name: eyelash_corne_left_oled
     #snippet: zmk-usb-logging    # Uncomment to log over USB.
   - board: eyelash_corne_right
     # No display shield: this half carries the TPS65 touchpad on I2C0 (the display
