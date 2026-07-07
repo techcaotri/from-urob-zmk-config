@@ -14,11 +14,12 @@
 /*
  * Azoteq IQS5xx (TPS65) touchpad -- RIGHT / peripheral half.
  *
- * Wired EXACTLY like the LXF-YZP/zmk-config-rolio@tps65 Corne reference (same
- * touchpad module, same pins):
+ * Wired like the working LXF-YZP/zmk-config-rolio *master* branch (the config that
+ * actually runs on this hardware; the tps65 branch's P0.15/P0.10 + RDY pull-down did
+ * not):
  *   I2C0   SDA = P0.17,  SCL = P0.20      (400 kHz)
- *   RESET  = P0.15   (rolio pro_micro 21 / D21-A3, active-low)
- *   RDY    = P0.10   (rolio pro_micro 16 / D16, active-high + pull-down)
+ *   RESET  = P1.01   (gpio1 1, active-low)
+ *   RDY    = P1.02   (gpio1 2, active-high, no pull-down)
  *
  * P0.17/P0.20 are the display connector's pins: the LEFT half drives the vista508
  * display over SPI0 (SPIM0) on them; this half has no display, so we free SPI0 and
@@ -59,11 +60,11 @@
         compatible = "azoteq,iqs5xx";
         reg = <0x74>;
 
-        reset-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;                     /* rolio pro_micro 21 (D21/A3) */
-        /* RDY/INT: pull-down parks the line low between reports so the driver's
-         * interrupt sees only real data-ready edges (rolio@tps65 "Stabilize
-         * touchpad RDY input" fix; guide Part I.3/I.4). */
-        rdy-gpios   = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; /* rolio pro_micro 16 (D16) */
+        /* RESET / RDY: the pins that actually work on this hardware, taken from the
+         * rolio MASTER branch (the tps65 pro_micro 21/16 = P0.15/P0.10 + RDY pull-down
+         * did NOT work here). RESET = P1.01 (gpio1 1), RDY/INT = P1.02 (gpio1 2). */
+        reset-gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;    /* P1.01 */
+        rdy-gpios   = <&gpio1 2 GPIO_ACTIVE_HIGH>;   /* P1.02 */
 
         /* Gestures the chip should report (rolio reference values). */
         one-finger-tap;
