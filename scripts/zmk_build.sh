@@ -95,6 +95,15 @@ done
     END { if (seen) print sh }
 ' $HOST_CONFIG_DIR/build.yaml)"
 
+# Optional artifact-name per board entry (index-aligned with BOARDS/SHIELDS). When
+# present it is used verbatim as the firmware filename (e.g. eyelash_corne_right_touchpad),
+# which is clearer than the board_shield fallback; empty entries keep the fallback.
+[[ -z $ARTIFACTS ]] && ARTIFACTS="$(awk '
+    /^[[:space:]]*-[[:space:]]*board:/ { if (seen) print an; an=""; seen=1; next }
+    /^[[:space:]]*artifact-name:/ { s=$0; sub(/^[^:]*:[[:space:]]*/,"",s); an=s }
+    END { if (seen) print an }
+' $HOST_CONFIG_DIR/build.yaml)"
+
 [[ -z $CLEAR_CACHE ]] && CLEAR_CACHE="false"
 
 DOCKER_IMG="zmkfirmware/zmk-dev-arm:$ZEPHYR_VERSION"
@@ -207,7 +216,10 @@ compile_board () {
         else
             TYPE="bin"
         fi
-        OUTPUT="$OUTPUT_DIR/$1_$SHIELD_SUFFIX-zmk.$TYPE"
+        # Output filename: prefer the build.yaml artifact-name (arg 3); else board_shield.
+        local OUTBASE="$1_$SHIELD_SUFFIX-zmk"
+        [[ -n $3 ]] && OUTBASE="$3"
+        OUTPUT="$OUTPUT_DIR/$OUTBASE.$TYPE"
         [[ -f $OUTPUT ]] && [[ ! -L $OUTPUT ]] && mv "$OUTPUT" "$OUTPUT.bak"
         cp "$HOST_ZMK_DIR/app/build/$BUILD_DIR/zephyr/zmk.$TYPE" "$OUTPUT"
     else
@@ -225,6 +237,7 @@ echo "SHIELDS: $SHIELDS"
 # elements -- plain word-splitting would drop them and misalign the arrays.
 mapfile -t BOARDS <<< "$BOARDS"
 mapfile -t SHIELDS <<< "$SHIELDS"
+mapfile -t ARTIFACTS <<< "$ARTIFACTS"
 # Normalise the optional -b filter (comma/space separated) to a padded string we
 # can substring-match against, so "-b eyelash_corne_right" builds just that
 # board's build.yaml entries (with their own shields).
@@ -235,6 +248,6 @@ do
         continue
     fi
     printf "compile_board %s with %s\n" "${BOARDS[i]}" "${SHIELDS[i]}"
-    compile_board "${BOARDS[i]}" "${SHIELDS[i]}"
+    compile_board "${BOARDS[i]}" "${SHIELDS[i]}" "${ARTIFACTS[i]}"
 done
 
