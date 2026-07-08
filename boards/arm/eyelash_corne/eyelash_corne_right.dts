@@ -48,12 +48,20 @@
 };
 
 &i2c0 {
-    compatible = "nordic,nrf-twim";
+    /*
+     * Legacy TWI (nordic,nrf-twi), NOT TWIM (EasyDMA), to match rolio EXACTLY.
+     * rolio's &pro_micro_i2c resolves to nordic,nrf-twi @ 100 kHz. Forcing TWIM
+     * here broke the touchpad the same way it broke the OLED: TWIM's EasyDMA cannot
+     * transmit from flash/RODATA, so the Azoteq IQS5xx driver's const register
+     * writes silently fail and the pad never comes up. Legacy TWI works (this is
+     * why the touchpad only worked under rolio's firmware).
+     */
+    compatible = "nordic,nrf-twi";
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <400000>;   /* I2C_BITRATE_FAST (400 kHz) */
+    clock-frequency = <100000>;   /* I2C_BITRATE_STANDARD (100 kHz), as rolio */
 
     tps43: iqs5xx@74 {
         status = "okay";

@@ -44,7 +44,15 @@
 };
 
 &i2c0 {
-    compatible = "nordic,nrf-twim";
+    /*
+     * Use the legacy TWI (nordic,nrf-twi), NOT TWIM (EasyDMA), to match rolio
+     * EXACTLY. rolio's &pro_micro_i2c resolves to nordic,nrf-twi; forcing TWIM here
+     * broke the display: TWIM's EasyDMA cannot transmit from flash/RODATA buffers,
+     * so the SSD1306's const init/command sequences silently fail and the panel
+     * stays OFF. The legacy TWI driver clocks bytes out from any memory, so it
+     * works. (Same fix applies to the touchpad on the right half.)
+     */
+    compatible = "nordic,nrf-twi";
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
