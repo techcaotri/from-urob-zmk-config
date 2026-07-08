@@ -17,6 +17,14 @@ include:
     #snippet: zmk-usb-logging
   - board: eyelash_corne_left
     shield: settings_reset
+    # NOTE: this is the LEFT-half settings reset (unsuffixed name kept for back-compat).
     artifact-name: eyelash_corne_settings_reset
     #snippet: zmk-usb-logging
- 
+  - board: eyelash_corne_right
+    shield: settings_reset
+    # RIGHT-half settings reset. Clearing bonds after a split re-flash must be done on
+    # BOTH halves or the untouched half keeps a stale bond and pairing fails
+    # (bt_smp peer reason 0x3 / Security failed err 4).
+    artifact-name: eyelash_corne_right_settings_reset
+    #snippet: zmk-usb-logging
+
