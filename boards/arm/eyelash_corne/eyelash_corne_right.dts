@@ -94,6 +94,12 @@
         two-finger-tap;
 
         scroll;
+        /* Natural (content-follows-finger) scroll baseline (rolio parity). The
+         * build-time master toggle is CONFIG_IQS5XX_NATURAL_SCROLL (driver Kconfig,
+         * default y). Set CONFIG_IQS5XX_NATURAL_SCROLL=n in a .conf (e.g.
+         * config/eyelash_corne_right.conf) to build classic/reverse scrolling.
+         * (Devicetree can't read Kconfig -- it is processed first -- so the toggle
+         * lives in the driver, not here.) */
         natural-scroll-y;
         natural-scroll-x;
 
