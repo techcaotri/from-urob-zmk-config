@@ -107,6 +107,17 @@
         scroll-accel-shift = <8>;    /* fixed-point shift for scroll-accel-k */
         scroll-ema-shift = <2>;      /* velocity-EMA smoothing for inertia seed */
 
+        /* Scroll inertia: content coasts after a fast lift-off, stops on next touch.
+         * The coast runs on the touchpad's dedicated work queue (no I2C / no BLE
+         * contention). Tune: raise fling-min to require a firmer flick, lower
+         * fling-decay-num for a shorter coast. */
+        scroll-inertia;
+        fling-min = <6>;             /* min lift velocity to start a coast */
+        fling-stop = <96>;           /* stop below 0.375 detent/tick (Q8) */
+        fling-decay-num = <240>;     /* coast v *= 240/256 each tick (~1s) */
+        fling-decay-den = <256>;
+        fling-tick-ms = <16>;        /* >= BLE connection interval */
+
         /* Custom gestures (see driver Parts C & D). */
         zoom;                                  /* two-finger pinch-to-zoom */
         three-finger-swipe;                    /* three-finger swipe up -> launch app */
