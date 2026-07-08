@@ -38,13 +38,14 @@ manifest:
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
-    # nice_oled display widgets. Follow rolio's LATEST: rolio's config/west.yml pins
-    # this to mctechnology17/zmk-nice-oled @ main, so we do too. (The previous
-    # techcaotri fork @ ff9969d was tuned for a nice_epaper panel and rendered
-    # pixelized/garbled on this hardware's 128x32 SSD1306 OLED.)
+    # nice_oled display widgets. techcaotri fork of mctechnology17/zmk-nice-oled (the source
+    # rolio uses), branch corne-touchpad = mctechnology17 `main` + one fix: the AND_CENTRAL
+    # peripheral-battery text is drawn at the configurable BATTERY_CUSTOM_X/Y instead of the
+    # hard-coded (0,19) that lands off-screen on this portrait panel, so the right-half
+    # battery / "connected" indicator is actually visible (see eyelash_corne.conf).
     - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
+      remote: techcaotri
+      revision: corne-touchpad
     # Azoteq IQS5xx touchpad driver with our custom pinch-zoom and three-finger
     # swipe-up gestures (fork of AYM1607/zmk-driver-azoteq-iqs5xx). The touchpad
     # replaced the right-half OLED, so mario-peripheral-animation (the
