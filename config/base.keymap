@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <input/processors.dtsi>
+#include <behaviors/input_gestures_accel.dtsi>   // oleksandrmaslov/zmk-pointing-acceleration: &pointer_accel
 #include <dt-bindings/zmk/input_transform.h>
 
 
@@ -260,12 +261,31 @@ ZMK_MACRO(win_sleep,
   };
 };
 
-/* Azoteq IQS5xx touchpad: orientation transforms on the central listener.
- * Attached here (not in the board dtsi) because <input/processors.dtsi> is
+/* Cursor (pointer) acceleration -- oleksandrmaslov/zmk-pointing-acceleration, the
+ * module's "Precision Mode" preset: 0.5x for fine control at slow speeds, ramping to
+ * 1.5x at high speed on a linear curve, with a high 1.0x threshold for stability.
+ * The module acts ONLY on REL_X/REL_Y (its accel_codes[] are hardcoded to the cursor
+ * axes), so it does NOT touch REL_WHEEL/REL_HWHEEL -- it composes cleanly with the
+ * driver's scroll acceleration + inertia (they operate on disjoint event codes). */
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;
+    track-remainders;             /* accumulate fractional movement for precision */
+    min-factor = <500>;           /* 0.5x at very slow speeds (fine control) */
+    max-factor = <1500>;          /* up to 1.5x at high speed */
+    speed-threshold = <2000>;     /* counts/sec that maps to 1.0x (high = stable) */
+    speed-max = <7000>;           /* counts/sec at which max-factor is reached */
+    acceleration-exponent = <1>;  /* linear response */
+};
+
+/* Azoteq IQS5xx touchpad: cursor acceleration + orientation transforms on the central
+ * listener. Attached here (not in the board dtsi) because <input/processors.dtsi> is
  * already included above; declaring it twice would duplicate nodes.
- * Flags mirror the rolio reference; adjust per guide section 9.3 if axes are wrong. */
+ * Flags mirror the rolio reference; adjust per guide section 9.3 if axes are wrong.
+ * &pointer_accel is first so it accelerates the raw relayed cursor movement; it leaves
+ * the wheel untouched, so the driver's scroll accel/inertia still own scrolling. */
 &tps43_listener {
     input-processors =
+        <&pointer_accel>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
         <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>,
         <&zip_temp_layer AUTOMOUSE 600>;   /* Part F: motion auto-enables AUTOMOUSE for 600ms */

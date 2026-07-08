@@ -55,7 +55,18 @@ manifest:
       # corne-touchpad = feature/zoom-and-swipe + a dedicated touchpad work queue that
       # keeps the blocking I2C reads off the system work queue, so the BLE split's
       # reconnect (connection-cleanup + re-advertise) isn't starved during heavy
-      # touchpad use. Pairs with the zmk advertising-retry fix above.
+      # touchpad use. Pairs with the zmk advertising-retry fix above. Also carries the
+      # scroll acceleration + inertia (velocity-lowered divisor + momentum work queue).
       revision: corne-touchpad
+    # Pointer/cursor acceleration -- techcaotri fork of oleksandrmaslov/zmk-pointing-
+    # acceleration @ corne-touchpad. Adds the zmk,input-processor-acceleration processor
+    # (&pointer_accel), configured in the module's "Precision Mode" preset on the central
+    # listener (see config/base.keymap). It accelerates REL_X/REL_Y only (cannot touch the
+    # wheel), so it composes with the driver's scroll accel/inertia. The fork adds one CMake
+    # line (${APPLICATION_SOURCE_DIR}/include) so the module resolves <drivers/input_processor.h>
+    # on our pinned ZMK v0.2 (where app/include is PRIVATE to the app target).
+    - name: zmk-pointing-acceleration
+      remote: techcaotri
+      revision: b440ad63af5e9277703b882e0e0b5bb55ff31f64
   self:
     path: config
