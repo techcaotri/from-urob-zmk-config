@@ -97,6 +97,16 @@
         natural-scroll-y;
         natural-scroll-x;
 
+        /* Scroll acceleration (velocity-lowered divisor). Defaults reproduce the
+         * old linear feel at rest; the divisor drops as the finger speeds up so a
+         * fast flick emits many more detents ("accelerator"). Tune on hardware:
+         * raise scroll-accel-k / lower scroll-min-div for stronger acceleration. */
+        scroll-base-div = <32>;      /* divisor at rest (units per detent) */
+        scroll-min-div = <6>;        /* floor at top speed -> max accel = base/min */
+        scroll-accel-k = <72>;       /* gain (Q8): higher = accelerates sooner */
+        scroll-accel-shift = <8>;    /* fixed-point shift for scroll-accel-k */
+        scroll-ema-shift = <2>;      /* velocity-EMA smoothing for inertia seed */
+
         /* Custom gestures (see driver Parts C & D). */
         zoom;                                  /* two-finger pinch-to-zoom */
         three-finger-swipe;                    /* three-finger swipe up -> launch app */
