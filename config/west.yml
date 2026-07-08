@@ -25,8 +25,12 @@ manifest:
     # upstream branches above moved on to Zephyr 4.x, which the urob/eyelash_corne
     # board (old Zephyr board model) cannot build. Re-pin deliberately if bumping.
     - name: zmk
-      remote: zmkfirmware
-      revision: 6f85f48b19afae04f98e9abacb36ce1425b61f78
+      # techcaotri fork of zmkfirmware/zmk. Branch corne-touchpad = the pinned base
+      # (6f85f48b19afae04f98e9abacb36ce1425b61f78) + the split-peripheral advertising
+      # -EINVAL retry fix, so the split re-advertises and reconnects even while the
+      # touchpad is generating load. Same Zephyr (app/west.yml unchanged from the base).
+      remote: techcaotri
+      revision: corne-touchpad
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
@@ -47,6 +51,10 @@ manifest:
     # nice_view_custom peripheral animation) is no longer used and was removed.
     - name: zmk-driver-azoteq-iqs5xx
       remote: techcaotri
-      revision: feature/zoom-and-swipe
+      # corne-touchpad = feature/zoom-and-swipe + a dedicated touchpad work queue that
+      # keeps the blocking I2C reads off the system work queue, so the BLE split's
+      # reconnect (connection-cleanup + re-advertise) isn't starved during heavy
+      # touchpad use. Pairs with the zmk advertising-retry fix above.
+      revision: corne-touchpad
   self:
     path: config
