@@ -7,8 +7,21 @@
 
 #include "eyelash_corne.dtsi"
 
+/* RIGHT half: same 6 key-matrix cols as the left, shifted into transform columns
+ * 6..11 by col-offset (exactly like rolio's sofle_right.overlay). */
+&kscan0 {
+    col-gpios
+        = <&gpio0 29 GPIO_ACTIVE_HIGH>   /* pro_micro 20 -> P0.29 */
+        , <&gpio1 4  GPIO_ACTIVE_HIGH>   /* pro_micro 8  -> P1.04 */
+        , <&gpio0 11 GPIO_ACTIVE_HIGH>   /* pro_micro 7  -> P0.11 */
+        , <&gpio1 0  GPIO_ACTIVE_HIGH>   /* pro_micro 6  -> P1.00 */
+        , <&gpio0 24 GPIO_ACTIVE_HIGH>   /* pro_micro 5  -> P0.24 */
+        , <&gpio0 22 GPIO_ACTIVE_HIGH>   /* pro_micro 4  -> P0.22 */
+        ;
+};
+
 &default_transform {
-    col-offset = <7>;
+    col-offset = <6>;
 };
 
 /*

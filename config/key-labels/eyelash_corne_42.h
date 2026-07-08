@@ -1,11 +1,18 @@
-/*                                      48 KEY MATRIX / LAYOUT MAPPING
+/*                              42 KEY MATRIX / LAYOUT MAPPING (plain Corne)
 
-  ╭────────────────────────┬              ┬────────────────────────╮ ╭─────────────────────────┬                 ┬─────────────────────────╮
-  │  0   1   2   3   4   5 │       6      │  7   8   9  10  11  12 │ │ LT5 LT4 LT3 LT2 LT1 LT0 │         JT0     │ RT0 RT1 RT2 RT3 RT4 RT5 │
-  │ 13  14  15  16  17  18 │    19 20 21  │ 22  23  24  25  26  27 │ │ LM5 LM4 LM3 LM2 LM1 LM0 │     JM0 JM1 JM2 │ RM0 RM1 RM2 RM3 RM4 RM5 │
-  │ 28  29  30  31  32  33 │ 34    35     │ 36  37  38  39  40  41 │ │ LB5 LB4 LB3 LB2 LB1 LB0 │ EB0     JB0     │ RB0 RB1 RB2 RB3 RB4 RB5 │
-  ╰───────────╮ 42  43  44 │              │ 45  46  47 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │                 │ RH0 RH1 RH2 ╭───────────╯
-              ╰────────────┴              ┴────────────╯                         ╰─────────────┴                 ┴─────────────╯             */
+  This hardware is a plain 42-key Corne (no encoder, no joystick), wired like
+  zmk-config-rolio (sofle). Positions are contiguous 0..41 and match
+  &default_transform exactly. The joystick (JT0/JM0-2/JB0) and encoder (EB0) keys of
+  the 48-key eyelash variant are GONE, so every position after the left-top row shifts
+  down; combos/behaviors reference the LT/RT/LM/RM/LB/RB/LH/RH symbols below, so they
+  track this renumbering automatically.
+
+  ╭────────────────────────╮ ╭────────────────────────╮ ╭─────────────────────────┬─────────────────────────╮
+  │  0   1   2   3   4   5 │ │  6   7   8   9  10  11 │ │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+  │ 12  13  14  15  16  17 │ │ 18  19  20  21  22  23 │ │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+  │ 24  25  26  27  28  29 │ │ 30  31  32  33  34  35 │ │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+  ╰───────────╮ 36  37  38 │ │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰────────────╯ ╰────────────╯                         ╰─────────────┴─────────────╯             */
 
 #pragma once
 
@@ -16,55 +23,45 @@
 #define LT4  1
 #define LT5  0
 
-#define RT0  7  // right-top row
-#define RT1  8
-#define RT2  9
-#define RT3 10
-#define RT4 11
-#define RT5 12
+#define RT0  6  // right-top row
+#define RT1  7
+#define RT2  8
+#define RT3  9
+#define RT4 10
+#define RT5 11
 
-#define LM0 18  // left-middle row
-#define LM1 17
-#define LM2 16
-#define LM3 15
-#define LM4 14
-#define LM5 13
+#define LM0 17  // left-middle row
+#define LM1 16
+#define LM2 15
+#define LM3 14
+#define LM4 13
+#define LM5 12
 
-#define RM0 22  // right-middle row
-#define RM1 23
-#define RM2 24
-#define RM3 25
-#define RM4 26
-#define RM5 27
+#define RM0 18  // right-middle row
+#define RM1 19
+#define RM2 20
+#define RM3 21
+#define RM4 22
+#define RM5 23
 
-#define LB0 33  // left-bottom row
-#define LB1 32
-#define LB2 31
-#define LB3 30
-#define LB4 29
-#define LB5 28
+#define LB0 29  // left-bottom row
+#define LB1 28
+#define LB2 27
+#define LB3 26
+#define LB4 25
+#define LB5 24
 
-#define RB0 36  // right-bottom row
-#define RB1 37
-#define RB2 38
-#define RB3 39
-#define RB4 40
-#define RB5 41
+#define RB0 30  // right-bottom row
+#define RB1 31
+#define RB2 32
+#define RB3 33
+#define RB4 34
+#define RB5 35
 
-#define LH0 44  // left thumb keys
-#define LH1 43
-#define LH2 42
+#define LH0 38  // left thumb keys
+#define LH1 37
+#define LH2 36
 
-#define RH0 45  // right thumb keys
-#define RH1 46
-#define RH2 47
-
-#define EB0 34  // left scroll-encoder bottom key
-
-#define JT0 6   // right joystick top key
-
-#define JM0 19  // right joystick middle row
-#define JM1 20
-#define JM2 21
-
-#define JB0 35  // right joystick bottom key
+#define RH0 39  // right thumb keys
+#define RH1 40
+#define RH2 41
