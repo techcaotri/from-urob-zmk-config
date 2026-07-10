@@ -126,6 +126,7 @@
 
         /* Custom gestures (see driver Parts C & D). */
         zoom;                                  /* two-finger pinch-to-zoom */
+        zoom-div = <4>;                        /* accumulated units per Ctrl+wheel step (lower = faster zoom) */
         three-finger-swipe;                    /* three-finger swipe up -> launch app */
         three-finger-swipe-threshold = <80>;   /* tune: lower = more sensitive */
 
