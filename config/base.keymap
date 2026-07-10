@@ -283,8 +283,29 @@ ZMK_MACRO(win_sleep,
  * Flags mirror the rolio reference; adjust per guide section 9.3 if axes are wrong.
  * &pointer_accel is first so it accelerates the raw relayed cursor movement; it leaves
  * the wheel untouched, so the driver's scroll accel/inertia still own scrolling. */
+/* Pinch-to-zoom -> a REAL Left-Ctrl, with NO host-side remapper (see docs Problem 21).
+ * The driver holds mouse button 5 (INPUT_BTN_4) for the whole pinch; this
+ * `zmk,input-processor-behaviors` instance converts that button into a genuine `&kp LCTRL`
+ * on the CENTRAL keyboard HID -- pressed at pinch start, released at pinch end -- via the
+ * exact path a physical Ctrl key uses, and STOPs the event so it is never also emitted as a
+ * phantom HID mouse button. Composed with the driver's REL_WHEEL steps, the host receives a
+ * real keyboard Ctrl + a real mouse wheel = zoom in EVERY application (Chrome, Qt apps, ...),
+ * identical to a physical keyboard + mouse. This replaces the fragile input-remapper
+ * button5->Ctrl mapping, which injected Ctrl on a separate virtual keyboard device and let
+ * the wheel be re-injected/mangled -- the reason Chromium ignored it and Qt apps zoomed one
+ * way only. INPUT_BTN_4 is now consumed here, so do NOT also bind it as a normal mouse btn. */
+/ {
+    zip_zoom_ctrl: zip_zoom_ctrl {
+        compatible = "zmk,input-processor-behaviors";
+        #input-processor-cells = <0>;
+        codes = <INPUT_BTN_4>;
+        bindings = <&kp LCTRL>;
+    };
+};
+
 &tps43_listener {
     input-processors =
+        <&zip_zoom_ctrl>,                  /* pinch button5 -> real Left-Ctrl, then STOP */
         <&pointer_accel>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
         <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>,
