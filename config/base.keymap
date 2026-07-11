@@ -301,11 +301,23 @@ ZMK_MACRO(win_sleep,
         codes = <INPUT_BTN_4>;
         bindings = <&kp LCTRL>;
     };
+
+    /* Two-finger double-tap -> a real Left-Super (GNOME Activities overview). The driver pulses
+     * INPUT_BTN_3 on the second 2-finger tap; this maps it to a `&kp LGUI` tap and STOPs it so it
+     * is never emitted as a phantom HID mouse button. Same native mechanism -- and the same
+     * mandatory CONFIG_INPUT_THREAD_STACK_SIZE=4096 -- as zip_zoom_ctrl. See gestures guide Part J. */
+    zip_activities_super: zip_activities_super {
+        compatible = "zmk,input-processor-behaviors";
+        #input-processor-cells = <0>;
+        codes = <INPUT_BTN_3>;
+        bindings = <&kp LGUI>;
+    };
 };
 
 &tps43_listener {
     input-processors =
         <&zip_zoom_ctrl>,                  /* pinch button5 -> real Left-Ctrl, then STOP */
+        <&zip_activities_super>,           /* 2-finger double-tap button4 -> real Left-Super, then STOP */
         <&pointer_accel>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
         <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>,

@@ -127,8 +127,16 @@
         /* Custom gestures (see driver Parts C & D). */
         zoom;                                  /* two-finger pinch-to-zoom */
         zoom-div = <4>;                        /* accumulated units per Ctrl+wheel step (lower = faster zoom) */
-        three-finger-swipe;                    /* three-finger swipe up -> launch app */
-        three-finger-swipe-threshold = <80>;   /* tune: lower = more sensitive */
+        /* three-finger-swipe DISABLED: the TPS43 is 2-finger-max so it can never fire, and it would
+         * double-bind INPUT_BTN_3, which the 2-finger "Activities" gesture below now carries.
+         * three-finger-swipe; three-finger-swipe-threshold = <80>; */
+        two-finger-double-tap;                 /* two 2-finger taps -> show Activities (Super), gestures guide Part J */
+        /* >>> TUNE HERE <<<  max ms between the two taps, and also how long a SINGLE two-finger tap
+         * waits before it becomes a right-click. Lower = snappier right-click but you must double-tap
+         * faster; higher = easier double-tap but laggier right-click. Measured comfortable double-taps
+         * on this unit were ~170-215 ms, so ~220 is about the floor. Change this ONE number, then
+         * rebuild + flash the RIGHT half. */
+        two-finger-double-tap-window-ms = <220>;
 
         /* Sensitivity (rolio reference values). */
         bottom-beta = <5>;
